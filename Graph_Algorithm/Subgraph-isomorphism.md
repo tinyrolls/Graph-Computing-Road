@@ -1,15 +1,7 @@
 # 子图同构算法
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 _NP-complete Problem_
 
-=======
->>>>>>> update vf2
-=======
-_NP-complete Problem_
-
->>>>>>> Update assemble
 假设有图，$G = (V, E), H = (V', E')$
 
 $G$的子图 ，$G_0 = (V_0, E_0):V_0\subset V,E_0\subset E\cup(V_0 \times V_0)$
@@ -17,8 +9,6 @@ $G$的子图 ，$G_0 = (V_0, E_0):V_0\subset V,E_0\subset E\cup(V_0 \times V_0)$
 若存在，$f: V_0 \to V', (v_1, v_2) \in E_0 \Rightarrow (f(v_1), f(v_2)) \in E'$
 
 则，$G_0 \cong H$
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 ## VF2
 
@@ -136,7 +126,7 @@ graph->stream_vertices<VertexId>(
 
         Bitmap *g_F = g->getgraph()->alloc_vertex_bitmap();
         g_F->clear();
-L
+
         auto *q_V = new std::vector<VertexId>;
         auto *g_V = new std::vector<VertexId>;
         q_V->push_back(us);
@@ -152,9 +142,6 @@ L
     },
     candidates);
 ```
-=======
->>>>>>> update vf2
-=======
 
 ## VF2
 
@@ -166,10 +153,8 @@ _深度优先_ _节点检查_
 
 ![](img/vf2-1.png)
 
-<<<<<<< HEAD
 ![](img/vf2-2.png)
->>>>>>> update img
-=======
+
 ```c++
 bool MatchAndNext(Vf2State &state, Bitmap *match) {
   if (state.Vf2IsGoal()) {
@@ -276,7 +261,7 @@ graph->stream_vertices<VertexId>(
 
         Bitmap *g_F = g->getgraph()->alloc_vertex_bitmap();
         g_F->clear();
-L
+
         auto *q_V = new std::vector<VertexId>;
         auto *g_V = new std::vector<VertexId>;
         q_V->push_back(us);
@@ -292,4 +277,3 @@ L
     },
     candidates);
 ```
->>>>>>> Update assemble
