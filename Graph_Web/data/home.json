@@ -1,0 +1,105 @@
+[
+  [
+    {
+      "name": "刘梅",
+      "value": 0,
+      "symbolSize": 70,
+      "draggable": "True",
+      "category": "adult",
+      "des": "一家的女主人。某医院护士长。一家家务都由她来做。</br>她爱家，爱孩子们，关注孩子们的成长。"
+    },
+    {
+      "name": "夏东海",
+      "value": 1,
+      "symbolSize": 70,
+      "draggable": "True",
+      "category": "adult",
+      "des": "一家的男主人。原是儿童剧院编导，后来因为自己剧本的选角问题辞职。</br>他教导有方，很少发脾气，为人幽默风趣，平时爱看书学习。"
+    },
+    {
+      "name": "夏雪",
+      "value": 2,
+      "symbolSize": 50,
+      "draggable": "True",
+      "category": "child",
+      "des": "夏东海长女。高中生→大学生，成绩优秀，性格独立，有很强的自信心。</br>有时也有点娇气和傲气，会给父母制造出一些高级麻烦。"
+    },
+    {
+      "name": "刘星",
+      "value": 3,
+      "symbolSize": 30,
+      "draggable": "True",
+      "category": "child",
+      "des": "刘梅之子。初中生→高中生，成绩（尤其化学）常令刘梅头痛。</br>却也聪明机灵，想象力丰富。看似瘦弱，体育倒很好。爱好广泛但大多三分钟热度。"
+    },
+    {
+      "name": "夏雨",
+      "value": 4,
+      "symbolSize": 30,
+      "draggable": "True",
+      "category": "child",
+      "des": "夏东海小儿子。小学生。在美国长大，以“小海归”自居。</br>也因此时常不明白一些成语而闹笑话。继刘星之后潜在的麻烦制造者。"
+    },
+    {
+      "name": "夏祥",
+      "value": 5,
+      "symbolSize": 50,
+      "draggable": "Ture",
+      "category": "adult",
+      "des": "夏东海父亲。喜欢孩子，在教育方面却特别反对对孩子太过溺宠，有时会为了这个问题说上好几个小时。"
+    },
+    {
+      "name": "范晓英",
+      "value": 6,
+      "symbolSize": 50,
+      "draggable": "False",
+      "category": "adult",
+      "des": "刘梅母亲。喜欢孩子 ，总在关键时刻保护他们，孩子们时常把她当做保护伞。</br>虽然有时也有一定溺爱的成分。 干起家务从不惜力，且做得一手好菜。"
+    }
+  ],
+  [
+    {
+      "source": "刘梅",
+      "target": "夏东海",
+      "value": "夫妻"
+    },
+    {
+      "source": "夏东海",
+      "target": "刘梅",
+      "value": "夫妻"
+    },
+    {
+      "source": "刘梅",
+      "target": "刘星",
+      "value": "母子"
+    },
+    {
+      "source": "夏东海",
+      "target": "夏雪",
+      "value": "父女"
+    },
+    {
+      "source": "夏东海",
+      "target": "夏雨",
+      "value": "父子"
+    },
+    {
+      "source": "夏祥",
+      "target": "夏东海",
+      "value": "父子"
+    },
+    {
+      "source": "范晓英",
+      "target": "夏东海",
+      "value": "母子"
+    }
+  ],
+  [
+    {
+      "name": "adult"
+    },
+    {
+      "name": "child"
+    }
+  ]
+]

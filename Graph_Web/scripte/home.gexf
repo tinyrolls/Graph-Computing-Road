@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf xmlns:viz="http://www.gexf.net/1.2draft/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.gephi.org/gexf/1.2draft" xmlns:ns0="xsi" version="1.2" ns0:schemaLocation="http://www.gephi.org/gexf/1.1draft http://gephi.org/gexf/1.2draft.xsd">
+  <meta lastmodified="2018-07-15">
+    <creator>Home With Kids</creator>
+    <description>A Demo Graph</description>
+  </meta>
+  <graph defaultedgetype="directed" label="A Demo Graph" mode="static" timeformat="double">
+    <attributes class="node" mode="static">
+      <attribute id="0" title="ID" type="string"/>
+      <attribute id="1" title="adult" type="boolean">
+        <default>true</default>
+      </attribute>
+    </attributes>
+    <nodes>
+      <node id="0" label="刘梅">
+        <attvalues>
+          <attvalue for="0" value="123456"/>
+          <attvalue for="1" value="true"/>
+        </attvalues>
+      </node>
+      <node id="1" label="夏东海">
+        <attvalues>
+          <attvalue for="0" value="534523"/>
+          <attvalue for="1" value="true"/>
+        </attvalues>
+      </node>
+      <node id="2" label="夏雪">
+        <attvalues>
+          <attvalue for="0" value="2312311"/>
+          <attvalue for="1" value="false"/>
+        </attvalues>
+      </node>
+      <node id="3" label="刘星">
+        <attvalues>
+          <attvalue for="0" value="1231231"/>
+          <attvalue for="1" value="false"/>
+        </attvalues>
+      </node>
+      <node id="4" label="夏雨">
+        <attvalues>
+          <attvalue for="0" value="2314889"/>
+          <attvalue for="1" value="false"/>
+        </attvalues>
+      </node>
+      <node id="5" label="夏祥">
+        <attvalues>
+          <attvalue for="0" value="786767"/>
+          <attvalue for="1" value="true"/>
+        </attvalues>
+      </node>
+      <node id="6" label="范晓英">
+        <attvalues>
+          <attvalue for="0" value="786767"/>
+          <attvalue for="1" value="true"/>
+        </attvalues>
+      </node>
+    </nodes>
+    <edges>
+      <edge id="0" source="0" target="1" weight="1" label="妻子"/>
+      <edge id="1" source="1" target="0" weight="1" label="丈夫"/>
+      <edge id="2" source="0" target="2" weight="1" label="继母"/>
+      <edge id="3" source="2" target="3" weight="1" label="姐姐"/>
+      <edge id="4" source="3" target="4" weight="1" label="哥哥"/>
+      <edge id="5" source="0" target="3" weight="1" label="母亲"/>
+      <edge id="6" source="0" target="4" weight="1" label="继母"/>
+      <edge id="7" source="6" target="1" weight="1" label="母亲"/>
+      <edge id="8" source="5" target="1" weight="1" label="父亲"/>
+    </edges>
+  </graph>
+</gexf>

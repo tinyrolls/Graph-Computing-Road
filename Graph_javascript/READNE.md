@@ -19,7 +19,9 @@ Graph_javascript Compare
   <iframe width="600" height="450" src="http://visjs.org/examples/network/exampleApplications/nodeLegend.html" scrolling="yes">
   </iframe>
 
-  - 一个不错的实现 <https://github.com/neo4j-contrib/neovis.js> ![](img/example-viz.png)
+  - 一个不错的实现 <https://github.com/neo4j-contrib/neovis.js>
+
+  ![](img/example-viz.png)
 
 2. sigma.js
 

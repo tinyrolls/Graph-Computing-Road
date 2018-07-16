@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html style="height: 100%" lang="zh">
+
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript" src="js/echarts.min.js"></script>
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <!-- <script type="text/javascript" src="js/dataTool.min.js"></script> -->
+</head>
+
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+
+    $.getJSON('data/weibonet.json', function(linedata) {
+      var data = linedata[0]
+      var links = linedata[1]
+      var categories = linedata[2]
+      var globaldata = []
+
+      option = {
+        title: {
+          text: 'Graph Demo',
+          // subtext: 'Default layout',
+          top: "top",
+          left: "center"
+        },
+        tooltip: {},
+        legend: [{
+          // selectedMode: 'single',
+          data: categories.map(function(a) {
+            return a.name;
+          }),
+          selectedMode: 'true',
+          bottom: 20,
+          formatter: function(name) {
+            return echarts.format.truncateText(name, 40, '14px Microsoft Yahei', '…');
+          },
+        }],
+        toolbox: {
+          show: true,
+          feature: {
+            dataView: {
+              show: true,
+              readOnly: true
+            },
+            restore: {
+              show: true
+            },
+            saveAsImage: {
+              show: true
+            }
+          }
+        },
+        animationDuration: 1500,
+        animationEasingUpdate: 'quinticInOut',
+        series: [{
+          name: 'Graph Demo',
+          type: 'graph',
+          layout: 'force',
+          force: {
+            edgeLength: 50,
+            repulsion: 240,
+            gravity: 0.03,
+            layoutAnimation: true
+          },
+          data: data,
+          links: links,
+          categories: categories,
+          focusNodeAdjacency: true,
+          roam: true,
+          label: {
+            normal: {
+              show: true,
+              position: 'top',
+              formatter: '{b}'
+            }
+          },
+          edgeLabel: {
+            show: false
+          },
+          lineStyle: {
+            normal: {
+              color: 'source',
+              curveness: 0
+            }
+          }
+        }]
+      };
+
+      for (var i = data.length - 1; i >= 0; i--) {
+        if (data[i].category != data[i].name) { //排除删除根元素的可能
+          for (var ii = data.length - 1; ii >= 0; ii--) { //删除第一级节点的子节点
+            if (data[ii].category == data[i].name) {
+              for (var iii = data.length - 1; iii >= 0; iii--) { //删除第二级节点的子节点
+                if (data[iii].category == data[ii].name) {
+                  globaldata.push(data[iii]);
+                  data.splice(iii, 1);
+                }
+              }
+              globaldata.push(data[ii]);
+              data.splice(ii, 1);
+            }
+          }
+          globaldata.push(data[i]);
+          data.splice(i, 1); //删除该元素的第一级子节点,最多需删除三级
+        }
+      };
+
+      myChart.setOption(option);
+
+      //点击隐藏节点实现,定义数组globaldata用来存储被隐藏的节点的子节点
+      myChart.on('click', function(params) {
+        if (params.dataType === "node") {
+          var deletedFlag = false; // 标记点击的此节点是否存在子节点,若不存在则说明可能在上次的操作中已经删除,这时就需要尝试把之前删除的节点重新添加进去
+          for (var i = data.length - 1; i >= 0; i--) {
+            if (data[i].category == params.name) {
+              if (data[i].category != data[i].name) { //排除删除根元素的可能
+                deletedFlag = true;
+                for (var ii = data.length - 1; ii >= 0; ii--) { //删除第一级节点的子节点
+                  if (data[ii].category == data[i].name) {
+                    for (var iii = data.length - 1; iii >= 0; iii--) { //删除第二级节点的子节点
+                      if (data[iii].category == data[ii].name) {
+                        globaldata.push(data[iii]);
+                        data.splice(iii, 1);
+                      }
+                    }
+                    globaldata.push(data[ii]);
+                    data.splice(ii, 1);
+                  }
+                }
+                globaldata.push(data[i]);
+                data.splice(i, 1); //删除该元素的第一级子节点,最多需删除三级
+              }
+            }
+          }
+          if (!deletedFlag) { //这种情况下需要恢复该节点的子节点
+            var nodeChildren = []; //存放本次恢复的数据,然后将它们从globaldata中删除
+            for (var n = globaldata.length - 1; n >= 0; n--) {
+              if (params.name == globaldata[n].category) { //显示该节点第一级子节点
+                data.push(globaldata[n]);
+                nodeChildren.push(globaldata[n]);
+                for (var nn = globaldata.length - 1; nn >= 0; nn--) {
+                  if (globaldata[n].name == globaldata[nn].category) { //显示该节点第二级子节点
+                    data.push(globaldata[nn]);
+                    nodeChildren.push(globaldata[nn]);
+                    for (var nnn = globaldata.length - 1; nnn >= 0; nnn--) {
+                      if (globaldata[nn].name == globaldata[nnn].category) { //显示该节点第三级子节点
+                        data.push(globaldata[nnn]);
+                        nodeChildren.push(globaldata[nnn]);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            if (nodeChildren.length > 0) {
+              for (var s = 0; s < nodeChildren.length; s++) {
+                for (var n = globaldata.length - 1; n >= 0; n--) {
+                  if (nodeChildren[s].name == globaldata[n].name) {
+                    globaldata.splice(n, 1);
+                  }
+                }
+              }
+            }
+          }
+
+
+          myChart.setOption(option);
+        }
+      });
+    })
+  </script>
+</body>
+
+</html>

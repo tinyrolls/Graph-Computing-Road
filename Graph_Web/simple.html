@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html style="height: 100%" lang="zh">
+
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript" src="js/echarts.min.js"></script>
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <!-- <script type="text/javascript" src="js/dataTool.min.js"></script> -->
+</head>
+
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+
+    $.getJSON('data/home.json', function(linedata) {
+      var data = linedata[0]
+      var links = linedata[1]
+      var categories = linedata[2]
+      var globalSeriesData = [];
+
+      option = {
+        title: {
+          text: 'Graph Demo',
+          // subtext: 'Default layout',
+          top: "top",
+          left: "center"
+        },
+        tooltip: {
+          formatter: function(x) {
+            return x.data.des;
+          }
+        },
+
+        // tooltip: {},
+        legend: [{
+          formatter: function(name) {
+            return echarts.format.truncateText(name, 40, '14px Microsoft Yahei', '…');
+          },
+          tooltip: {
+            show: true
+          },
+          selectedMode: 'true',
+          bottom: 20,
+          data: ['adult', 'child']
+        }],
+        toolbox: {
+          show: true,
+          feature: {
+            dataView: {
+              show: true,
+              readOnly: true
+            },
+            restore: {
+              show: true
+            },
+            saveAsImage: {
+              show: true
+            }
+          }
+        },
+        animationDuration: 1500,
+        animationEasingUpdate: 'quinticInOut',
+        series: [{
+          name: 'Graph Demo',
+          type: 'graph',
+          layout: 'force',
+          force: {
+            edgeLength: 200,
+            repulsion: 240,
+            gravity: 0.03,
+            layoutAnimation: true
+          },
+          data: data,
+          links: links,
+          categories: categories,
+          focusNodeAdjacency: true,
+          roam: true,
+          label: {
+            normal: {
+              show: true,
+              position: 'top',
+              formatter: '{b}'
+            }
+          },
+          edgeLabel: {
+            normal: {
+              show: true,
+              textStyle: {
+                fontSize: 10
+              },
+              formatter: "{c}"
+            }
+          },
+          // focusEdgeAdjacency: true,
+          edgeSymbol: ['circle', 'arrow'],
+          lineStyle: {
+            normal: {
+              color: 'source',
+              curveness: 0
+            }
+          }
+        }]
+      };
+      myChart.setOption(option);
+
+    })
+  </script>
+</body>
+
+</html>
