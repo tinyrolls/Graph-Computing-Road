@@ -38,7 +38,7 @@ int main() {
 
   for (int i = 0; i < 34; i++) {
     for (int j = 0; j < 34; j++) {
-      if (comm[i] != comm[j] | i == j) continue;
+      if (comm[i] != comm[j] || i == j) continue;
       Q += (delta[i][j]*1.0 - 1.0*k[i]*k[j]/(2.0*edge_sum)*1.0);
       //cout << "i , j, delta[i][j], k[i], k[j] : " << i << " " << j << " " << delta[i][j] << " " << k[i] << " " << k[j] << endl;
       cout << "current Q : " << Q << endl;
@@ -48,5 +48,7 @@ int main() {
   Q = Q / (2.0*edge_sum);
 
   cout << "Q : " << Q << endl;
+
+  return 0;
 
 }

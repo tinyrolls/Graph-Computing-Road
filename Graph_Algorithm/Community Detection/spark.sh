@@ -42,3 +42,10 @@ cat log.txt
 
 ## fma
 apt install gcc g++ make -y
+
+
+## gradle
+### sdk!
+apt install zip unzip -y
+curl -s "https://get.sdkman.io" | bash
+sdk install gradle
