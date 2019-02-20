@@ -1,0 +1,24 @@
+root@f09421c49195:~/spark-distributed-louvain-modularity/dga-graphx# bin/louvain -i /root/data/twitter/twitter.txt -o /root/graphx_twitter_result/ -m local[8] --edgedelimiter " " 2>/root/graphx_twitter_log.txt
+sparkcontext = new SparkContext(local[8],graphX analytic)
+
+Starting Louvain level 0
+totalEdgeWeight: 4841532
+  # vertices moved: 63,756
+  # vertices moved: 45,300
+  # vertices moved: 26,943
+  # vertices moved: 12,297
+  # vertices moved: 6,301
+  # vertices moved: 3,894
+  # vertices moved: 2,546
+
+Completed in 14 cycles
+qValue: 0.7281581733939297
+
+Starting Louvain level 1
+totalEdgeWeight: 4841532
+  # vertices moved: 2,128
+  # vertices moved: 1,001
+
+Completed in 4 cycles
+qValue: 0.7952003580035765
+Time in seconds: 334

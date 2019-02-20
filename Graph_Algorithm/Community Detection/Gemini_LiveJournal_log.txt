@@ -1,0 +1,190 @@
+root@f09421c49195:~/GeminiLite# ./bin/louvain --input_dir /root/data/LiveJ/ --vertices 0 --output_dir /root/Gemini_result/
+set |V| to 0
+|V| = 4847571 |E| = 68993773
+edges loaded into memory
+preprocessing used 6.54 seconds
+m = 68992184.000000
+20190219071540.352: done the initial process
+20190219071540.352:
+20190219071540.352: begin propagating process...
+20190219071540.353: begin round 0
+20190219071550.397: active_vertices(1) = 4547184
+20190219071554.446: active_vertices(2) = 787037
+20190219071557.654: active_vertices(3) = 116112
+20190219071559.313: active_vertices(4) = 72925
+20190219071600.236: active_vertices(5) = 33394
+20190219071600.809: active_vertices(6) = 17934
+20190219071601.187: active_vertices(7) = 10728
+20190219071601.456: active_vertices(8) = 7152
+20190219071601.653: active_vertices(9) = 4864
+20190219071601.808: active_vertices(10) = 3845
+20190219071601.945: active_vertices(11) = 3111
+20190219071602.059: active_vertices(12) = 2366
+20190219071602.149: active_vertices(13) = 1772
+20190219071602.220: active_vertices(14) = 1388
+20190219071602.277: active_vertices(15) = 1093
+20190219071602.333: active_vertices(16) = 971
+20190219071602.381: active_vertices(17) = 698
+20190219071602.414: active_vertices(18) = 449
+20190219071602.444: active_vertices(19) = 309
+20190219071602.469: active_vertices(20) = 248
+20190219071602.493: active_vertices(21) = 224
+20190219071602.518: active_vertices(22) = 188
+20190219071602.538: active_vertices(23) = 143
+20190219071602.559: active_vertices(24) = 119
+20190219071602.580: active_vertices(25) = 92
+20190219071602.597: active_vertices(26) = 45
+20190219071602.611: active_vertices(27) = 42
+20190219071602.625: active_vertices(28) = 34
+20190219071602.639: active_vertices(29) = 22
+20190219071602.653: active_vertices(30) = 15
+20190219071602.665: active_vertices(31) = 13
+20190219071602.678: active_vertices(32) = 8
+20190219071602.690: active_vertices(33) = 2
+20190219071602.703: active_vertices(34) = 4
+20190219071602.714: active_vertices(35) = 1
+20190219071602.726: active_vertices(36) = 2
+20190219071602.739: active_vertices(37) = 8
+20190219071602.751: active_vertices(38) = 12
+20190219071602.763: active_vertices(39) = 5
+20190219071602.775: active_vertices(40) = 0
+20190219071602.775: round 0 ends in 40 iterations
+20190219071602.775: begin round 1
+20190219071606.407: active_vertices(1) = 1981
+20190219071606.465: active_vertices(2) = 155
+20190219071606.487: active_vertices(3) = 223
+20190219071606.506: active_vertices(4) = 81
+20190219071606.522: active_vertices(5) = 46
+20190219071606.535: active_vertices(6) = 19
+20190219071606.548: active_vertices(7) = 25
+20190219071606.561: active_vertices(8) = 10
+20190219071606.573: active_vertices(9) = 3
+20190219071606.585: active_vertices(10) = 3
+20190219071606.597: active_vertices(11) = 4
+20190219071606.609: active_vertices(12) = 0
+20190219071606.609: round 1 ends in 12 iterations
+20190219071606.609: begin round 2
+20190219071610.241: active_vertices(1) = 11
+20190219071610.254: active_vertices(2) = 0
+20190219071610.254: round 2 ends in 2 iterations
+20190219071610.254: begin round 3
+20190219071613.886: active_vertices(1) = 0
+20190219071613.886: round 3 ends in 1 iterations
+20190219071613.886: done propagating process
+20190219071614.230: number of communities is 179150
+20190219071614.230: the final value of Q_total is 0.834142
+20190219071614.307: num_sub_vertices = 179150
+20190219071615.884: make_sub_edges done
+set |V| to 179150
+|V| =  179150, |E| = 1015749
+preprocessing used 0.12 seconds
+20190219071616.014:
+20190219071616.014: begin sub_propagating process 0
+20190219071616.014: begin round 0
+20190219071616.194: sub_active_vertices = 154892
+20190219071616.302: sub_active_vertices = 17006
+20190219071616.375: sub_active_vertices = 1295
+20190219071616.420: sub_active_vertices = 712
+20190219071616.450: sub_active_vertices = 124
+20190219071616.471: sub_active_vertices = 39
+20190219071616.488: sub_active_vertices = 20
+20190219071616.507: sub_active_vertices = 17
+20190219071616.524: sub_active_vertices = 23
+20190219071616.538: sub_active_vertices = 3
+20190219071616.543: sub_active_vertices = 0
+20190219071616.543: round 0 ends in 11 iterations
+20190219071616.543: begin round 1
+20190219071616.648: sub_active_vertices = 26
+20190219071616.664: sub_active_vertices = 0
+20190219071616.664: round 1 ends in 2 iterations
+20190219071616.664: begin round 2
+20190219071616.767: sub_active_vertices = 0
+20190219071616.767: round 2 ends in 1 iterations
+20190219071616.767: done the sub_propagating process
+20190219071617.298: new_community_number = 24032
+20190219071617.298: the value of Q after subprocess is 0.860963
+20190219071617.372: num_sub_vertices = 24032
+20190219071618.649: make_sub_edges done
+set |V| to 24032
+|V| =  24032, |E| = 181793
+preprocessing used 0.02 seconds
+20190219071618.671:
+20190219071618.671: begin sub_propagating process 1
+20190219071618.671: begin round 0
+20190219071618.700: sub_active_vertices = 9909
+20190219071618.720: sub_active_vertices = 1310
+20190219071618.734: sub_active_vertices = 93
+20190219071618.743: sub_active_vertices = 77
+20190219071618.752: sub_active_vertices = 62
+20190219071618.758: sub_active_vertices = 7
+20190219071618.762: sub_active_vertices = 0
+20190219071618.762: round 0 ends in 7 iterations
+20190219071618.762: begin round 1
+20190219071618.780: sub_active_vertices = 19
+20190219071618.786: sub_active_vertices = 1
+20190219071618.788: sub_active_vertices = 0
+20190219071618.788: round 1 ends in 3 iterations
+20190219071618.788: begin round 2
+20190219071618.806: sub_active_vertices = 0
+20190219071618.806: round 2 ends in 1 iterations
+20190219071618.806: done the sub_propagating process
+20190219071619.290: new_community_number = 14156
+20190219071619.290: the value of Q after subprocess is 0.8645
+20190219071619.360: num_sub_vertices = 14156
+20190219071620.604: make_sub_edges done
+set |V| to 14156
+|V| =  14156, |E| = 47348
+preprocessing used 0.01 seconds
+20190219071620.615:
+20190219071620.615: begin sub_propagating process 2
+20190219071620.615: begin round 0
+20190219071620.622: sub_active_vertices = 350
+20190219071620.628: sub_active_vertices = 28
+20190219071620.631: sub_active_vertices = 0
+20190219071620.631: round 0 ends in 3 iterations
+20190219071620.631: begin round 1
+20190219071620.637: sub_active_vertices = 0
+20190219071620.637: round 1 ends in 1 iterations
+20190219071620.637: done the sub_propagating process
+20190219071621.085: new_community_number = 13837
+20190219071621.085: the value of Q after subprocess is 0.865146
+20190219071621.104: num_sub_vertices = 13837
+20190219071622.305: make_sub_edges done
+set |V| to 13837
+|V| =  13837, |E| = 37447
+preprocessing used 0.01 seconds
+20190219071622.313:
+20190219071622.313: begin sub_propagating process 3
+20190219071622.313: begin round 0
+20190219071622.318: sub_active_vertices = 3
+20190219071622.321: sub_active_vertices = 0
+20190219071622.321: round 0 ends in 2 iterations
+20190219071622.321: begin round 1
+20190219071622.326: sub_active_vertices = 0
+20190219071622.326: round 1 ends in 1 iterations
+20190219071622.326: done the sub_propagating process
+20190219071622.774: new_community_number = 13836
+20190219071622.774: the value of Q after subprocess is 0.865146
+20190219071622.843: num_sub_vertices = 13836
+20190219071624.050: make_sub_edges done
+set |V| to 13836
+|V| =  13836, |E| = 37425
+preprocessing used 0.01 seconds
+20190219071624.061:
+20190219071624.062: begin sub_propagating process 4
+20190219071624.062: begin round 0
+20190219071624.067: sub_active_vertices = 1
+20190219071624.068: sub_active_vertices = 0
+20190219071624.068: round 0 ends in 2 iterations
+20190219071624.068: begin round 1
+20190219071624.073: sub_active_vertices = 0
+20190219071624.073: round 1 ends in 1 iterations
+20190219071624.073: done the sub_propagating process
+20190219071624.528: new_community_number = 13836
+20190219071624.528: the value of Q after subprocess is 0.865281
+20190219071624.528:
+20190219071624.528: all propagating process done!
+20190219071624.528: Q = 0.865146
+20190219071624.528: community number is 13836
+20190219071625.720: all processes done!
+root@f09421c49195:~/GeminiLite#
