@@ -68,4 +68,21 @@ docker exec -it 4a7afcdeb729 bash
 ### run instructure
  bin/louvain -i /root/data/LiveJ/LiveJournal_new.txt -o /root/graphx_result/ -m local[8] --edgedelimiter "\t" 2>/root/graphx_LiveJournal_log.txt
 
-bin/louvain -i /root/data/twitter/twitter.txt -o /root/graphx_result/ -m local[8] --edgedelimiter " " 2>/root/graphx_twitter_log.txt
+bin/louvain -i /root/data/twitter/twitter.txt -o /root/graphx_result/ -m local[8] --edgedelimiter " " 2>/root/graphx_twitter_log.tx
+
+
+# other
+## 查看CPU型号
+cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c
+
+## 总核数 = 物理CPU个数 X 每颗物理CPU的核数
+## 总逻辑CPU数 = 物理CPU个数 X 每颗物理CPU的核数 X 超线程数
+
+## 查看物理CPU个数
+cat /proc/cpuinfo| grep "physical id"| sort| uniq| wc -l
+
+## 查看每个物理CPU中core的个数(即核数)
+cat /proc/cpuinfo| grep "cpu cores"| uniq
+
+## 查看逻辑CPU的个数
+cat /proc/cpuinfo| grep "processor"| wc -l

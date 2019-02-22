@@ -1,0 +1,418 @@
+-------------------------------------------------------
+
+root@0b88cbf47f6c:~/spark-distributed-louvain-modularity/dga-graphx# ./bin/louva
+in -i /root/data/Enron/email.txt -o /root/log/Enron-log -m local[8] --edgedelimiter "\t" 2>/root/graphx_Enron.txt
+sparkcontext = new SparkContext(local[8],graphX analytic)
+
+Starting Louvain level 0
+totalEdgeWeight: 735324
+  # vertices moved: 28,810
+  # vertices moved: 5,572
+  # vertices moved: 4,090
+
+Completed in 6 cycles
+qValue: 0.2932971782771375
+
+Starting Louvain level 1
+totalEdgeWeight: 735324
+  # vertices moved: 4,722
+  # vertices moved: 1,481
+  # vertices moved: 275
+
+Completed in 6 cycles
+qValue: 0.4837186641192157
+
+Starting Louvain level 2
+totalEdgeWeight: 735324
+  # vertices moved: 523
+  # vertices moved: 136
+
+Completed in 4 cycles
+qValue: 0.5439693805353492
+Time in seconds: 95
+
+
+--------------------------------------------------------------
+
+
+
+root@0b88cbf47f6c:~/spark-distributed-louvain-modularity/dga-graphx# ./bin/louvain -i /root/data/Enron/email.txt -o /root/log/Enron-log -m local[8] --edgedelimiter "\t" 2>/root/graphx_Enron.txt
+sparkcontext = new SparkContext(local[8],graphX analytic)
+
+Starting Louvain level 0
+totalEdgeWeight: 735324
+  # vertices moved: 28,810
+  # vertices moved: 5,572
+  # vertices moved: 4,090
+
+Completed in 6 cycles
+qValue: 0.2932971782771375
+
+Starting Louvain level 1
+totalEdgeWeight: 735324
+  # vertices moved: 4,722
+  # vertices moved: 1,481
+  # vertices moved: 275
+
+Completed in 6 cycles
+qValue: 0.4837186641192157
+
+Starting Louvain level 2
+totalEdgeWeight: 735324
+  # vertices moved: 523
+  # vertices moved: 136
+
+Completed in 4 cycles
+qValue: 0.5439693805353492
+Time in seconds: 100
+
+-------------------------------------------------------------------
+
+root@0b88cbf47f6c:~/spark-distributed-louvain-modularity/dga-graphx# ./bin/louvain -i /root/data/Enron/email.txt -o /root/log/Enron-log -m local[8] --edgedelimiter "\t" 2>/root/graphx_Enron.txt
+sparkcontext = new SparkContext(local[8],graphX analytic)
+
+Starting Louvain level 0
+totalEdgeWeight: 735324
+  # vertices moved: 28,810
+  # vertices moved: 5,572
+  # vertices moved: 4,090
+
+Completed in 6 cycles
+qValue: 0.2932971782771375
+
+Starting Louvain level 1
+totalEdgeWeight: 735324
+  # vertices moved: 4,722
+  # vertices moved: 1,481
+  # vertices moved: 275
+
+Completed in 6 cycles
+qValue: 0.4837186641192157
+
+Starting Louvain level 2
+totalEdgeWeight: 735324
+  # vertices moved: 523
+  # vertices moved: 136
+
+Completed in 4 cycles
+qValue: 0.5439693805353492
+Time in seconds: 98
+
+-----------------------------------------------------------------------------
+
+root@0b88cbf47f6c:~/spark-distributed-louvain-modularity/dga-graphx# ./bin/louvain -i /root/data/amazon/amazon.txt -o /root/log/amazon-log -m local[8] --edgedelimiter "\t" 2>/root/graphx_amazon.txt
+sparkcontext = new SparkContext(local[8],graphX analytic)
+
+Starting Louvain level 0
+totalEdgeWeight: 6774776
+  # vertices moved: 295,090
+  # vertices moved: 135,023
+  # vertices moved: 83,639
+  # vertices moved: 46,956
+  # vertices moved: 27,090
+  # vertices moved: 16,444
+  # vertices moved: 10,989
+  # vertices moved: 7,740
+  # vertices moved: 5,827
+
+Completed in 18 cycles
+qValue: 0.6423457827816522
+
+Starting Louvain level 1
+totalEdgeWeight: 6774776
+  # vertices moved: 33,013
+  # vertices moved: 11,093
+  # vertices moved: 1,010
+  # vertices moved: 70
+
+Completed in 8 cycles
+qValue: 0.7696778674510424
+
+Starting Louvain level 2
+totalEdgeWeight: 6774776
+  # vertices moved: 7,013
+  # vertices moved: 2,077
+  # vertices moved: 136
+
+Completed in 6 cycles
+qValue: 0.836791194158024
+
+Starting Louvain level 3
+totalEdgeWeight: 6774776
+  # vertices moved: 1,267
+  # vertices moved: 324
+
+Completed in 4 cycles
+qValue: 0.8697065852509667
+Time in seconds: 593
+
+
+------------------------------------------------------------------------
+
+
+root@0b88cbf47f6c:~/spark-distributed-louvain-modularity/dga-graphx# ./bin/louvain -i /root/data/amazon/amazon.txt -o /root/log/amazon-log -m local[8] --edgedelimiter "\t" 2>/root/graphx_amazon.txt
+sparkcontext = new SparkContext(local[8],graphX analytic)
+
+Starting Louvain level 0
+totalEdgeWeight: 6774776
+  # vertices moved: 295,090
+  # vertices moved: 135,023
+  # vertices moved: 83,639
+  # vertices moved: 46,956
+  # vertices moved: 27,090
+  # vertices moved: 16,444
+  # vertices moved: 10,989
+  # vertices moved: 7,740
+  # vertices moved: 5,827
+
+Completed in 18 cycles
+qValue: 0.6423457827816522
+
+Starting Louvain level 1
+totalEdgeWeight: 6774776
+  # vertices moved: 33,013
+  # vertices moved: 11,093
+  # vertices moved: 1,010
+  # vertices moved: 70
+
+Completed in 8 cycles
+qValue: 0.7696778674510424
+
+Starting Louvain level 2
+totalEdgeWeight: 6774776
+  # vertices moved: 7,013
+  # vertices moved: 2,077
+  # vertices moved: 136
+
+Completed in 6 cycles
+qValue: 0.836791194158024
+
+Starting Louvain level 3
+totalEdgeWeight: 6774776
+  # vertices moved: 1,267
+  # vertices moved: 324
+
+Completed in 4 cycles
+qValue: 0.8697065852509667
+Time in seconds: 592
+
+
+-------------------------------------------------------------------
+
+
+root@0b88cbf47f6c:~/spark-distributed-louvain-modularity/dga-graphx# ./bin/louvaata/amazon/amazon.txt -o /root/log/amazon-log -m local[8] --edgedelimiter "\t" 2_amazon.txt
+sparkcontext = new SparkContext(local[8],graphX analytic)
+
+Starting Louvain level 0
+totalEdgeWeight: 6774776
+  # vertices moved: 295,090
+  # vertices moved: 135,023
+  # vertices moved: 83,639
+  # vertices moved: 46,956
+  # vertices moved: 27,090
+  # vertices moved: 16,444
+  # vertices moved: 10,989
+  # vertices moved: 7,740
+  # vertices moved: 5,827
+
+Completed in 18 cycles
+qValue: 0.6423457827816522
+
+Starting Louvain level 1
+totalEdgeWeight: 6774776
+  # vertices moved: 33,013
+  # vertices moved: 11,093
+  # vertices moved: 1,010
+  # vertices moved: 70
+
+Completed in 8 cycles
+qValue: 0.7696778674510424
+
+Starting Louvain level 2
+totalEdgeWeight: 6774776
+  # vertices moved: 7,013
+  # vertices moved: 2,077
+  # vertices moved: 136
+
+Completed in 6 cycles
+qValue: 0.836791194158024
+
+Starting Louvain level 3
+totalEdgeWeight: 6774776
+  # vertices moved: 1,267
+  # vertices moved: 324
+
+Completed in 4 cycles
+qValue: 0.8697065852509667
+Time in seconds: 584
+
+
+------------------------------------------------------------------
+
+root@0b88cbf47f6c:~/spark-distributed-louvain-modularity/dga-graphx# ./bin/louvaata/youtube/youtube.txt -o /root/log/youbute-log -m local[8] --edgedelimiter "\tphx_youtube.txt
+sparkcontext = new SparkContext(local[8],graphX analytic)
+
+Starting Louvain level 0
+totalEdgeWeight: 5975248
+  # vertices moved: 882,797
+  # vertices moved: 49,178
+  # vertices moved: 29,602
+  # vertices moved: 31,824
+
+Completed in 8 cycles
+qValue: 0.3549621510276826
+
+Starting Louvain level 1
+totalEdgeWeight: 5975248
+  # vertices moved: 175,167
+  # vertices moved: 54,724
+  # vertices moved: 8,126
+  # vertices moved: 3,065
+  # vertices moved: 1,260
+
+Completed in 10 cycles
+qValue: 0.5747036815805365
+
+Starting Louvain level 2
+totalEdgeWeight: 5975248
+  # vertices moved: 43,927
+  # vertices moved: 16,222
+  # vertices moved: 910
+  # vertices moved: 31
+
+Completed in 8 cycles
+qValue: 0.6467979754169992
+
+Starting Louvain level 3
+totalEdgeWeight: 5975248
+  # vertices moved: 8,245
+  # vertices moved: 2,427
+  # vertices moved: 124
+  # vertices moved: 1
+
+Completed in 8 cycles
+qValue: 0.6786359531651447
+
+Starting Louvain level 4
+totalEdgeWeight: 5975248
+  # vertices moved: 1,552
+  # vertices moved: 447
+
+Completed in 4 cycles
+qValue: 0.6859196345057925
+Time in seconds: 3671
+
+
+-----------------------------------------------------------------
+
+
+root@0b88cbf47f6c:~/spark-distributed-louvain-modularity/dga-graphx# ./bin/louvain -i /root/data/youtube/youtube.txt -o /root/log/youbute-log -m local[8] --edgedelimiter "\t" 2>/root/graphx_youtube.txt
+sparkcontext = new SparkContext(local[8],graphX analytic)
+
+Starting Louvain level 0
+totalEdgeWeight: 5975248
+  # vertices moved: 882,797
+  # vertices moved: 49,178
+  # vertices moved: 29,602
+  # vertices moved: 31,824
+
+Completed in 8 cycles
+qValue: 0.3549621510276826
+
+Starting Louvain level 1
+totalEdgeWeight: 5975248
+  # vertices moved: 175,167
+  # vertices moved: 54,724
+  # vertices moved: 8,126
+  # vertices moved: 3,065
+  # vertices moved: 1,260
+
+Completed in 10 cycles
+qValue: 0.5747036815805365
+
+Starting Louvain level 2
+totalEdgeWeight: 5975248
+  # vertices moved: 43,927
+  # vertices moved: 16,222
+  # vertices moved: 910
+  # vertices moved: 31
+
+Completed in 8 cycles
+qValue: 0.6467979754169992
+
+Starting Louvain level 3
+totalEdgeWeight: 5975248
+  # vertices moved: 8,245
+  # vertices moved: 2,427
+  # vertices moved: 124
+  # vertices moved: 1
+
+Completed in 8 cycles
+qValue: 0.6786359531651447
+
+Starting Louvain level 4
+totalEdgeWeight: 5975248
+  # vertices moved: 1,552
+  # vertices moved: 447
+
+Completed in 4 cycles
+qValue: 0.6859196345057925
+Time in seconds: 3803
+
+
+----------------------------------------------------------
+
+
+root@0b88cbf47f6c:~/spark-distributed-louvain-modularity/dga-graphx# ./bin/louvain -i /root/data/youtube/youtube.txt -o /root/log/youbute-log -m local[8] --edgedelimiter "\t" 2>/root/graphx_youtube.txt
+sparkcontext = new SparkContext(local[8],graphX analytic)
+
+Starting Louvain level 0
+totalEdgeWeight: 5975248
+  # vertices moved: 882,797
+  # vertices moved: 49,178
+  # vertices moved: 29,602
+  # vertices moved: 31,824
+
+Completed in 8 cycles
+qValue: 0.3549621510276826
+
+Starting Louvain level 1
+totalEdgeWeight: 5975248
+  # vertices moved: 175,167
+  # vertices moved: 54,724
+  # vertices moved: 8,126
+  # vertices moved: 3,065
+  # vertices moved: 1,260
+Completed in 10 cycles
+qValue: 0.5747036815805365
+
+Starting Louvain level 2
+totalEdgeWeight: 5975248
+  # vertices moved: 43,927
+  # vertices moved: 16,222
+  # vertices moved: 910
+  # vertices moved: 31
+
+Completed in 8 cycles
+qValue: 0.6467979754169992
+
+Starting Louvain level 3
+totalEdgeWeight: 5975248
+  # vertices moved: 8,245
+  # vertices moved: 2,427
+  # vertices moved: 124
+  # vertices moved: 1
+
+Completed in 8 cycles
+qValue: 0.6786359531651447
+
+Starting Louvain level 4
+totalEdgeWeight: 5975248
+  # vertices moved: 1,552
+  # vertices moved: 447
+
+Completed in 4 cycles
+qValue: 0.6859196345057925
+Time in seconds: 3771
+
+-----------------------------------------------------------------------------
