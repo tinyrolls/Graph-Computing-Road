@@ -1,0 +1,376 @@
+root@0b88cbf47f6c:~/GeminiLite# ./bin/lpa --input_dir /root/data/Enron/ --output_dir /root/result/
+set |V| to 0
+|V| = 36692 |E| = 735324
+edges loaded into memory
+preprocessing used 0.28 seconds
+34155 labels changed
+12133 labels changed
+4800 labels changed
+2502 labels changed
+2030 labels changed
+2677 labels changed
+2380 labels changed
+868 labels changed
+579 labels changed
+533 labels changed
+386 labels changed
+354 labels changed
+333 labels changed
+360 labels changed
+339 labels changed
+330 labels changed
+320 labels changed
+320 labels changed
+334 labels changed
+305 labels changed
+exec_time = 0.08 seconds
+ratio of intra-community edges: 93.89%
+number of communities: 1915
+modularity: 0.805386
+
+-------------------------------------------------------------
+
+root@0b88cbf47f6c:~/GeminiLite# ./bin/lpa --input_dir /root/data/Enron/ --output_dir /root/result/
+set |V| to 0
+|V| = 36692 |E| = 735324
+edges loaded into memory
+preprocessing used 0.31 seconds
+34237 labels changed
+10560 labels changed
+3958 labels changed
+2398 labels changed
+1792 labels changed
+1676 labels changed
+1485 labels changed
+1296 labels changed
+1396 labels changed
+1895 labels changed
+2896 labels changed
+3684 labels changed
+1810 labels changed
+970 labels changed
+678 labels changed
+548 labels changed
+449 labels changed
+397 labels changed
+378 labels changed
+319 labels changed
+exec_time = 0.09 seconds
+ratio of intra-community edges: 93.72%
+number of communities: 1872
+modularity: 0.803720
+--------------------------------------------------------------
+
+root@0b88cbf47f6c:~/GeminiLite# ./bin/lpa --input_dir /root/data/Enron/ --output_dir /root/result/
+set |V| to 0
+|V| = 36692 |E| = 735324
+edges loaded into memory
+preprocessing used 0.29 seconds
+34261 labels changed
+11769 labels changed
+4237 labels changed
+2217 labels changed
+2055 labels changed
+1622 labels changed
+1310 labels changed
+1019 labels changed
+614 labels changed
+472 labels changed
+438 labels changed
+410 labels changed
+390 labels changed
+486 labels changed
+369 labels changed
+340 labels changed
+350 labels changed
+297 labels changed
+309 labels changed
+300 labels changed
+exec_time = 0.08 seconds
+ratio of intra-community edges: 93.95%
+number of communities: 1883
+modularity: 0.805587
+
+------------------------------------------------------------
+
+root@0b88cbf47f6c:~/GeminiLite# ./bin/lpa --input_dir /root/data/amazon/ --output_dir /root/result/
+set |V| to 0
+|V| = 403394 |E| = 6774776
+edges loaded into memory
+preprocessing used 0.81 seconds
+367235 labels changed
+97121 labels changed
+33784 labels changed
+19137 labels changed
+13807 labels changed
+11244 labels changed
+9172 labels changed
+8063 labels changed
+7294 labels changed
+6874 labels changed
+6493 labels changed
+6176 labels changed
+5877 labels changed
+5849 labels changed
+5684 labels changed
+5661 labels changed
+5511 labels changed
+5429 labels changed
+5456 labels changed
+5400 labels changed
+exec_time = 0.95 seconds
+ratio of intra-community edges: 73.45%
+number of communities: 20650
+modularity: 0.734302
+
+----------------------------------------------------------
+
+root@0b88cbf47f6c:~/GeminiLite# ./bin/lpa --input_dir /root/data/amazon/ --output_dir /root/result/
+set |V| to 0
+|V| = 403394 |E| = 6774776
+edges loaded into memory
+preprocessing used 0.84 seconds
+366274 labels changed
+99533 labels changed
+34840 labels changed
+19370 labels changed
+13719 labels changed
+10762 labels changed
+8905 labels changed
+7973 labels changed
+7208 labels changed
+6679 labels changed
+6341 labels changed
+6178 labels changed
+5935 labels changed
+5825 labels changed
+5743 labels changed
+5506 labels changed
+5577 labels changed
+5406 labels changed
+5239 labels changed
+5359 labels changed
+exec_time = 0.93 seconds
+ratio of intra-community edges: 73.11%
+number of communities: 21023
+modularity: 0.730931
+
+------------------------------------------------------------
+
+root@0b88cbf47f6c:~/GeminiLite# ./bin/lpa --input_dir /root/data/amazon/ --output_dir /root/result/
+set |V| to 0
+|V| = 403394 |E| = 6774776
+edges loaded into memory
+preprocessing used 0.79 seconds
+366391 labels changed
+100068 labels changed
+34501 labels changed
+19370 labels changed
+13675 labels changed
+10838 labels changed
+8989 labels changed
+7725 labels changed
+7206 labels changed
+6675 labels changed
+6331 labels changed
+5989 labels changed
+5927 labels changed
+5717 labels changed
+5526 labels changed
+5498 labels changed
+5466 labels changed
+5300 labels changed
+5328 labels changed
+5305 labels changed
+exec_time = 0.92 seconds
+ratio of intra-community edges: 73.29%
+number of communities: 20890
+modularity: 0.732720
+
+---------------------------------------------------------------
+
+root@0b88cbf47f6c:~/GeminiLite# ./bin/lpa --input_dir /root/data/youtube/ --output_dir /root/result/
+set |V| to 0
+|V| = 1157828 |E| = 5975248
+edges loaded into memory
+preprocessing used 0.85 seconds
+1050841 labels changed
+320263 labels changed
+122201 labels changed
+60655 labels changed
+41562 labels changed
+32930 labels changed
+27474 labels changed
+24164 labels changed
+21961 labels changed
+21129 labels changed
+20927 labels changed
+19607 labels changed
+18895 labels changed
+18465 labels changed
+18353 labels changed
+17952 labels changed
+17856 labels changed
+17742 labels changed
+17036 labels changed
+17099 labels changed
+exec_time = 1.01 seconds
+ratio of intra-community edges: 92.15%
+number of communities: 29495
+modularity: 0.909879
+------------------------------------------------------------
+
+root@0b88cbf47f6c:~/GeminiLite# ./bin/lpa --input_dir /root/data/youtube/ --output_dir /root/result/
+set |V| to 0
+|V| = 1157828 |E| = 5975248
+edges loaded into memory
+preprocessing used 0.96 seconds
+1045626 labels changed
+349496 labels changed
+139955 labels changed
+70398 labels changed
+48792 labels changed
+38091 labels changed
+32293 labels changed
+30145 labels changed
+27317 labels changed
+25597 labels changed
+25347 labels changed
+23960 labels changed
+22918 labels changed
+22914 labels changed
+22055 labels changed
+21902 labels changed
+21640 labels changed
+21629 labels changed
+21448 labels changed
+21233 labels changed
+exec_time = 1.04 seconds
+ratio of intra-community edges: 89.72%
+number of communities: 31137
+modularity: 0.886278
+---------------------------------------------------------------
+root@0b88cbf47f6c:~/GeminiLite# ./bin/lpa --input_dir /root/data/youtube/ --output_dir /root/result/
+set |V| to 0
+|V| = 1157828 |E| = 5975248
+edges loaded into memory
+preprocessing used 0.85 seconds
+1041414 labels changed
+371527 labels changed
+147934 labels changed
+74417 labels changed
+51219 labels changed
+40099 labels changed
+33296 labels changed
+30720 labels changed
+28206 labels changed
+26198 labels changed
+25269 labels changed
+24111 labels changed
+23686 labels changed
+23148 labels changed
+22872 labels changed
+22558 labels changed
+22132 labels changed
+22123 labels changed
+22235 labels changed
+22004 labels changed
+exec_time = 1.01 seconds
+ratio of intra-community edges: 90.17%
+number of communities: 33251
+modularity: 0.891833
+
+------------------------------------------------------------
+root@0b88cbf47f6c:~/GeminiLite# ./bin/lpa --input_dir /root/data/lj/ --output_dir /root/result/
+set |V| to 0
+|V| = 4036538 |E| = 69362378
+edges loaded into memory
+preprocessing used 6.20 seconds
+3865357 labels changed
+1624145 labels changed
+532855 labels changed
+276852 labels changed
+179070 labels changed
+127465 labels changed
+93789 labels changed
+74316 labels changed
+61001 labels changed
+50391 labels changed
+43950 labels changed
+40234 labels changed
+35019 labels changed
+31314 labels changed
+29827 labels changed
+28716 labels changed
+28146 labels changed
+27910 labels changed
+27673 labels changed
+25800 labels changed
+exec_time = 8.14 seconds
+ratio of intra-community edges: 95.47%
+number of communities: 24969
+modularity: 0.954109
+
+-----------------------------------------------------------
+
+root@0b88cbf47f6c:~/GeminiLite# ./bin/lpa --input_dir /root/data/lj/ --output_dir /root/result/
+set |V| to 0
+|V| = 4036538 |E| = 69362378
+edges loaded into memory
+preprocessing used 6.07 seconds
+3853223 labels changed
+1708905 labels changed
+644021 labels changed
+344742 labels changed
+212592 labels changed
+149332 labels changed
+110858 labels changed
+84932 labels changed
+69299 labels changed
+59680 labels changed
+52390 labels changed
+47240 labels changed
+40949 labels changed
+35671 labels changed
+31369 labels changed
+29702 labels changed
+28258 labels changed
+26790 labels changed
+25277 labels changed
+23395 labels changed
+exec_time = 8.33 seconds
+ratio of intra-community edges: 95.75%
+number of communities: 25896
+modularity: 0.956902
+
+------------------------------------------------------------
+
+root@0b88cbf47f6c:~/GeminiLite# ./bin/lpa --input_dir /root/data/lj/ --output_dir /root/result/
+set |V| to 0
+|V| = 4036538 |E| = 69362378
+edges loaded into memory
+preprocessing used 5.56 seconds
+3862433 labels changed
+1707215 labels changed
+546191 labels changed
+265444 labels changed
+158593 labels changed
+106803 labels changed
+76246 labels changed
+59058 labels changed
+49796 labels changed
+44061 labels changed
+39589 labels changed
+36501 labels changed
+33568 labels changed
+30635 labels changed
+27797 labels changed
+26814 labels changed
+23879 labels changed
+22145 labels changed
+21024 labels changed
+21224 labels changed
+exec_time = 8.25 seconds
+ratio of intra-community edges: 96.28%
+number of communities: 24871
+modularity: 0.962129

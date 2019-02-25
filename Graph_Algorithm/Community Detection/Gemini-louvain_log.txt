@@ -1663,3 +1663,692 @@ preprocessing used 0.01 seconds
 20190222093140.790: Q = 0.841844
 20190222093140.790: community number is 12620
 20190222093140.959: all processes done!
+
+
+
+
+----------------------------------------------------------------------------
+
+
+
+
+root@0b88cbf47f6c:~/GeminiLite# ./bin/louvain --input_dir /root/data/lj/ --output_dir /root/result/
+set |V| to 0
+|V| = 4036538 |E| = 69362378
+edges loaded into memory
+preprocessing used 6.16 seconds
+m = 69362376.000000
+20190225031640.129: done the initial process
+20190225031640.129:
+20190225031640.129: begin propagating process...
+20190225031640.129: begin round 0
+20190225031648.926: active_vertices(1) = 3698039
+20190225031652.949: active_vertices(2) = 636705
+20190225031655.961: active_vertices(3) = 98734
+20190225031657.459: active_vertices(4) = 62462
+20190225031658.326: active_vertices(5) = 28762
+20190225031658.872: active_vertices(6) = 16589
+20190225031659.254: active_vertices(7) = 10934
+20190225031659.540: active_vertices(8) = 7591
+20190225031659.759: active_vertices(9) = 5497
+20190225031659.929: active_vertices(10) = 4142
+20190225031700.061: active_vertices(11) = 3448
+20190225031700.173: active_vertices(12) = 3062
+20190225031700.279: active_vertices(13) = 2823
+20190225031700.376: active_vertices(14) = 2330
+20190225031700.464: active_vertices(15) = 1860
+20190225031700.536: active_vertices(16) = 1496
+20190225031700.601: active_vertices(17) = 1239
+20190225031700.655: active_vertices(18) = 1044
+20190225031700.699: active_vertices(19) = 741
+20190225031700.735: active_vertices(20) = 609
+20190225031700.764: active_vertices(21) = 452
+20190225031700.788: active_vertices(22) = 294
+20190225031700.810: active_vertices(23) = 237
+20190225031700.830: active_vertices(24) = 240
+20190225031700.849: active_vertices(25) = 193
+20190225031700.868: active_vertices(26) = 158
+20190225031700.883: active_vertices(27) = 120
+20190225031700.897: active_vertices(28) = 107
+20190225031700.910: active_vertices(29) = 94
+20190225031700.922: active_vertices(30) = 49
+20190225031700.937: active_vertices(31) = 39
+20190225031700.965: active_vertices(32) = 23
+20190225031700.988: active_vertices(33) = 41
+20190225031701.009: active_vertices(34) = 16
+20190225031701.028: active_vertices(35) = 11
+20190225031701.045: active_vertices(36) = 3
+20190225031701.062: active_vertices(37) = 2
+20190225031701.077: active_vertices(38) = 0
+20190225031701.077: round 0 ends in 38 iterations
+20190225031701.077: begin round 1
+20190225031704.442: active_vertices(1) = 3525
+20190225031704.540: active_vertices(2) = 520
+20190225031704.567: active_vertices(3) = 387
+20190225031704.586: active_vertices(4) = 196
+20190225031704.603: active_vertices(5) = 156
+20190225031704.618: active_vertices(6) = 79
+20190225031704.631: active_vertices(7) = 59
+20190225031704.642: active_vertices(8) = 58
+20190225031704.653: active_vertices(9) = 24
+20190225031704.664: active_vertices(10) = 9
+20190225031704.675: active_vertices(11) = 10
+20190225031704.686: active_vertices(12) = 21
+20190225031704.697: active_vertices(13) = 27
+20190225031704.708: active_vertices(14) = 41
+20190225031704.719: active_vertices(15) = 28
+20190225031704.731: active_vertices(16) = 25
+20190225031704.742: active_vertices(17) = 30
+20190225031704.754: active_vertices(18) = 17
+20190225031704.765: active_vertices(19) = 16
+20190225031704.776: active_vertices(20) = 9
+20190225031704.788: active_vertices(21) = 9
+20190225031704.799: active_vertices(22) = 1
+20190225031704.809: active_vertices(23) = 0
+20190225031704.809: round 1 ends in 23 iterations
+20190225031704.809: begin round 2
+20190225031708.045: active_vertices(1) = 439
+20190225031708.102: active_vertices(2) = 14
+20190225031708.122: active_vertices(3) = 11
+20190225031708.142: active_vertices(4) = 6
+20190225031708.160: active_vertices(5) = 2
+20190225031708.176: active_vertices(6) = 6
+20190225031708.192: active_vertices(7) = 8
+20190225031708.206: active_vertices(8) = 1
+20190225031708.219: active_vertices(9) = 1
+20190225031708.232: active_vertices(10) = 1
+20190225031708.245: active_vertices(11) = 1
+20190225031708.257: active_vertices(12) = 0
+20190225031708.257: round 2 ends in 12 iterations
+20190225031708.257: begin round 3
+20190225031711.586: active_vertices(1) = 96
+20190225031711.602: active_vertices(2) = 0
+20190225031711.602: round 3 ends in 2 iterations
+20190225031711.602: begin round 4
+20190225031714.816: active_vertices(1) = 34
+20190225031714.829: active_vertices(2) = 0
+20190225031714.829: round 4 ends in 2 iterations
+20190225031714.829: begin round 5
+20190225031718.047: active_vertices(1) = 7
+20190225031718.059: active_vertices(2) = 0
+20190225031718.059: round 5 ends in 2 iterations
+20190225031718.059: begin round 6
+20190225031721.272: active_vertices(1) = 0
+20190225031721.272: round 6 ends in 1 iterations
+20190225031721.272: done propagating process
+20190225031721.582: number of communities is 164522
+20190225031721.582: the final value of Q_total is 0.825349
+20190225031721.677: num_sub_vertices = 164522
+20190225031723.218: make_sub_edges done
+set |V| to 164522
+|V| =  164522, |E| = 890243
+preprocessing used 0.16 seconds
+20190225031723.390:
+20190225031723.390: begin sub_propagating process 0
+20190225031723.390: begin round 0
+20190225031723.538: sub_active_vertices = 141748
+20190225031723.641: sub_active_vertices = 15141
+20190225031723.709: sub_active_vertices = 1354
+20190225031723.749: sub_active_vertices = 529
+20190225031723.775: sub_active_vertices = 185
+20190225031723.799: sub_active_vertices = 597
+20190225031723.825: sub_active_vertices = 1756
+20190225031723.851: sub_active_vertices = 608
+20190225031723.873: sub_active_vertices = 102
+20190225031723.891: sub_active_vertices = 27
+20190225031723.906: sub_active_vertices = 1
+20190225031723.915: sub_active_vertices = 0
+20190225031723.915: round 0 ends in 12 iterations
+20190225031723.915: begin round 1
+20190225031724.009: sub_active_vertices = 36
+20190225031724.025: sub_active_vertices = 3
+20190225031724.036: sub_active_vertices = 1
+20190225031724.050: sub_active_vertices = 0
+20190225031724.050: round 1 ends in 4 iterations
+20190225031724.050: begin round 2
+20190225031724.144: sub_active_vertices = 0
+20190225031724.144: round 2 ends in 1 iterations
+20190225031724.144: done the sub_propagating process
+20190225031724.636: new_community_number = 21925
+20190225031724.636: the value of Q after subprocess is 0.848835
+20190225031724.647: num_sub_vertices = 21925
+20190225031725.763: make_sub_edges done
+set |V| to 21925
+|V| =  21925, |E| = 193806
+preprocessing used 0.02 seconds
+20190225031725.789:
+20190225031725.789: begin sub_propagating process 1
+20190225031725.789: begin round 0
+20190225031725.819: sub_active_vertices = 12659
+20190225031725.839: sub_active_vertices = 1838
+20190225031725.854: sub_active_vertices = 190
+20190225031725.864: sub_active_vertices = 124
+20190225031725.873: sub_active_vertices = 108
+20190225031725.880: sub_active_vertices = 20
+20190225031725.884: sub_active_vertices = 3
+20190225031725.888: sub_active_vertices = 0
+20190225031725.888: round 0 ends in 8 iterations
+20190225031725.888: begin round 1
+20190225031725.907: sub_active_vertices = 41
+20190225031725.913: sub_active_vertices = 3
+20190225031725.917: sub_active_vertices = 1
+20190225031725.925: sub_active_vertices = 0
+20190225031725.925: round 1 ends in 4 iterations
+20190225031725.925: begin round 2
+20190225031725.950: sub_active_vertices = 0
+20190225031725.950: round 2 ends in 1 iterations
+20190225031725.950: done the sub_propagating process
+20190225031726.399: new_community_number = 9285
+20190225031726.399: the value of Q after subprocess is 0.852705
+20190225031726.410: num_sub_vertices = 9285
+20190225031727.423: make_sub_edges done
+set |V| to 9285
+|V| =  9285, |E| = 41743
+preprocessing used 0.01 seconds
+20190225031727.435:
+20190225031727.435: begin sub_propagating process 2
+20190225031727.435: begin round 0
+20190225031727.441: sub_active_vertices = 631
+20190225031727.445: sub_active_vertices = 42
+20190225031727.449: sub_active_vertices = 0
+20190225031727.449: round 0 ends in 3 iterations
+20190225031727.449: begin round 1
+20190225031727.453: sub_active_vertices = 0
+20190225031727.453: round 1 ends in 1 iterations
+20190225031727.453: done the sub_propagating process
+20190225031727.857: new_community_number = 8679
+20190225031727.857: the value of Q after subprocess is 0.853343
+20190225031727.945: num_sub_vertices = 8679
+20190225031729.039: make_sub_edges done
+set |V| to 8679
+|V| =  8679, |E| = 28085
+preprocessing used 0.01 seconds
+20190225031729.049:
+20190225031729.049: begin sub_propagating process 3
+20190225031729.049: begin round 0
+20190225031729.053: sub_active_vertices = 21
+20190225031729.055: sub_active_vertices = 0
+20190225031729.055: round 0 ends in 2 iterations
+20190225031729.055: begin round 1
+20190225031729.059: sub_active_vertices = 0
+20190225031729.059: round 1 ends in 1 iterations
+20190225031729.059: done the sub_propagating process
+20190225031729.463: new_community_number = 8660
+20190225031729.463: the value of Q after subprocess is 0.853352
+20190225031729.472: num_sub_vertices = 8660
+20190225031730.499: make_sub_edges done
+set |V| to 8660
+|V| =  8660, |E| = 27232
+preprocessing used 0.01 seconds
+20190225031730.506:
+20190225031730.506: begin sub_propagating process 4
+20190225031730.506: begin round 0
+20190225031730.510: sub_active_vertices = 1
+20190225031730.511: sub_active_vertices = 0
+20190225031730.511: round 0 ends in 2 iterations
+20190225031730.511: begin round 1
+20190225031730.515: sub_active_vertices = 0
+20190225031730.515: round 1 ends in 1 iterations
+20190225031730.515: done the sub_propagating process
+20190225031730.919: new_community_number = 8660
+20190225031730.919: the value of Q after subprocess is 0.853352
+20190225031730.919:
+20190225031730.919: all propagating process done!
+20190225031730.919: Q = 0.853352
+20190225031730.919: community number is 8660
+20190225031732.572: all processes done!
+
+
+
+---------------------------------------------------------------
+
+
+root@0b88cbf47f6c:~/GeminiLite# ./bin/louvain --input_dir /root/data/lj/ --output_dir /root/result/
+set |V| to 0
+|V| = 4036538 |E| = 69362378
+edges loaded into memory
+preprocessing used 6.33 seconds
+m = 69362376.000000
+20190225032318.779: done the initial process
+20190225032318.779:
+20190225032318.779: begin propagating process...
+20190225032318.779: begin round 0
+20190225032327.224: active_vertices(1) = 3697961
+20190225032330.784: active_vertices(2) = 636866
+20190225032333.542: active_vertices(3) = 98745
+20190225032335.014: active_vertices(4) = 62322
+20190225032335.856: active_vertices(5) = 28765
+20190225032336.388: active_vertices(6) = 16548
+20190225032336.766: active_vertices(7) = 10946
+20190225032337.047: active_vertices(8) = 7601
+20190225032337.262: active_vertices(9) = 5469
+20190225032337.425: active_vertices(10) = 4139
+20190225032337.554: active_vertices(11) = 3529
+20190225032337.663: active_vertices(12) = 3133
+20190225032337.768: active_vertices(13) = 2741
+20190225032337.860: active_vertices(14) = 2159
+20190225032337.944: active_vertices(15) = 1844
+20190225032338.018: active_vertices(16) = 1523
+20190225032338.080: active_vertices(17) = 1311
+20190225032338.138: active_vertices(18) = 1100
+20190225032338.181: active_vertices(19) = 753
+20190225032338.218: active_vertices(20) = 595
+20190225032338.251: active_vertices(21) = 438
+20190225032338.277: active_vertices(22) = 284
+20190225032338.300: active_vertices(23) = 232
+20190225032338.317: active_vertices(24) = 186
+20190225032338.334: active_vertices(25) = 169
+20190225032338.353: active_vertices(26) = 215
+20190225032338.371: active_vertices(27) = 169
+20190225032338.388: active_vertices(28) = 137
+20190225032338.403: active_vertices(29) = 102
+20190225032338.417: active_vertices(30) = 97
+20190225032338.432: active_vertices(31) = 83
+20190225032338.444: active_vertices(32) = 37
+20190225032338.456: active_vertices(33) = 37
+20190225032338.467: active_vertices(34) = 32
+20190225032338.477: active_vertices(35) = 44
+20190225032338.488: active_vertices(36) = 11
+20190225032338.499: active_vertices(37) = 4
+20190225032338.509: active_vertices(38) = 2
+20190225032338.521: active_vertices(39) = 0
+20190225032338.521: round 0 ends in 39 iterations
+20190225032338.521: begin round 1
+20190225032341.716: active_vertices(1) = 3535
+20190225032341.814: active_vertices(2) = 546
+20190225032341.842: active_vertices(3) = 432
+20190225032341.861: active_vertices(4) = 206
+20190225032341.878: active_vertices(5) = 150
+20190225032341.893: active_vertices(6) = 76
+20190225032341.906: active_vertices(7) = 51
+20190225032341.917: active_vertices(8) = 45
+20190225032341.928: active_vertices(9) = 33
+20190225032341.939: active_vertices(10) = 8
+20190225032341.949: active_vertices(11) = 0
+20190225032341.949: round 1 ends in 11 iterations
+20190225032341.949: begin round 2
+20190225032345.130: active_vertices(1) = 424
+20190225032345.155: active_vertices(2) = 14
+20190225032345.167: active_vertices(3) = 14
+20190225032345.179: active_vertices(4) = 7
+20190225032345.190: active_vertices(5) = 2
+20190225032345.201: active_vertices(6) = 6
+20190225032345.212: active_vertices(7) = 8
+20190225032345.222: active_vertices(8) = 1
+20190225032345.233: active_vertices(9) = 1
+20190225032345.243: active_vertices(10) = 1
+20190225032345.253: active_vertices(11) = 1
+20190225032345.263: active_vertices(12) = 0
+20190225032345.263: round 2 ends in 12 iterations
+20190225032345.263: begin round 3
+20190225032348.442: active_vertices(1) = 106
+20190225032348.457: active_vertices(2) = 1
+20190225032348.468: active_vertices(3) = 6
+20190225032348.478: active_vertices(4) = 2
+20190225032348.489: active_vertices(5) = 1
+20190225032348.499: active_vertices(6) = 1
+20190225032348.509: active_vertices(7) = 0
+20190225032348.509: round 3 ends in 7 iterations
+20190225032348.509: begin round 4
+20190225032351.686: active_vertices(1) = 45
+20190225032351.700: active_vertices(2) = 0
+20190225032351.700: round 4 ends in 2 iterations
+20190225032351.700: begin round 5
+20190225032354.884: active_vertices(1) = 5
+20190225032354.895: active_vertices(2) = 0
+20190225032354.895: round 5 ends in 2 iterations
+20190225032354.895: begin round 6
+20190225032358.072: active_vertices(1) = 0
+20190225032358.072: round 6 ends in 1 iterations
+20190225032358.072: done propagating process
+20190225032358.376: number of communities is 164573
+20190225032358.376: the final value of Q_total is 0.825379
+20190225032358.387: num_sub_vertices = 164573
+20190225032359.745: make_sub_edges done
+set |V| to 164573
+|V| =  164573, |E| = 890269
+preprocessing used 0.16 seconds
+20190225032359.905:
+20190225032359.905: begin sub_propagating process 0
+20190225032359.905: begin round 0
+20190225032400.055: sub_active_vertices = 141771
+20190225032400.156: sub_active_vertices = 15080
+20190225032400.222: sub_active_vertices = 1336
+20190225032400.262: sub_active_vertices = 569
+20190225032400.288: sub_active_vertices = 191
+20190225032400.310: sub_active_vertices = 156
+20190225032400.333: sub_active_vertices = 1210
+20190225032400.359: sub_active_vertices = 1385
+20190225032400.383: sub_active_vertices = 341
+20190225032400.401: sub_active_vertices = 53
+20190225032400.416: sub_active_vertices = 8
+20190225032400.430: sub_active_vertices = 0
+20190225032400.430: round 0 ends in 12 iterations
+20190225032400.430: begin round 1
+20190225032400.524: sub_active_vertices = 43
+20190225032400.540: sub_active_vertices = 5
+20190225032400.550: sub_active_vertices = 1
+20190225032400.563: sub_active_vertices = 0
+20190225032400.563: round 1 ends in 4 iterations
+20190225032400.563: begin round 2
+20190225032400.657: sub_active_vertices = 0
+20190225032400.657: round 2 ends in 1 iterations
+20190225032400.657: done the sub_propagating process
+20190225032401.130: new_community_number = 21958
+20190225032401.130: the value of Q after subprocess is 0.848843
+20190225032401.140: num_sub_vertices = 21958
+20190225032402.250: make_sub_edges done
+set |V| to 21958
+|V| =  21958, |E| = 193884
+preprocessing used 0.02 seconds
+20190225032402.278:
+20190225032402.278: begin sub_propagating process 1
+20190225032402.278: begin round 0
+20190225032402.308: sub_active_vertices = 12678
+20190225032402.328: sub_active_vertices = 1888
+20190225032402.342: sub_active_vertices = 190
+20190225032402.355: sub_active_vertices = 160
+20190225032402.365: sub_active_vertices = 109
+20190225032402.371: sub_active_vertices = 23
+20190225032402.377: sub_active_vertices = 24
+20190225032402.383: sub_active_vertices = 27
+20190225032402.388: sub_active_vertices = 10
+20190225032402.391: sub_active_vertices = 1
+20190225032402.394: sub_active_vertices = 0
+20190225032402.394: round 0 ends in 11 iterations
+20190225032402.394: begin round 1
+20190225032402.413: sub_active_vertices = 37
+20190225032402.418: sub_active_vertices = 3
+20190225032402.422: sub_active_vertices = 0
+20190225032402.422: round 1 ends in 3 iterations
+20190225032402.422: begin round 2
+20190225032402.441: sub_active_vertices = 3
+20190225032402.444: sub_active_vertices = 0
+20190225032402.444: round 2 ends in 2 iterations
+20190225032402.444: begin round 3
+20190225032402.464: sub_active_vertices = 0
+20190225032402.464: round 3 ends in 1 iterations
+20190225032402.464: done the sub_propagating process
+20190225032402.900: new_community_number = 9292
+20190225032402.900: the value of Q after subprocess is 0.852753
+20190225032402.910: num_sub_vertices = 9292
+20190225032403.880: make_sub_edges done
+set |V| to 9292
+|V| =  9292, |E| = 41226
+preprocessing used 0.01 seconds
+20190225032403.890:
+20190225032403.890: begin sub_propagating process 2
+20190225032403.890: begin round 0
+20190225032403.895: sub_active_vertices = 626
+20190225032403.900: sub_active_vertices = 78
+20190225032403.903: sub_active_vertices = 13
+20190225032403.906: sub_active_vertices = 10
+20190225032403.909: sub_active_vertices = 0
+20190225032403.909: round 0 ends in 5 iterations
+20190225032403.909: begin round 1
+20190225032403.914: sub_active_vertices = 0
+20190225032403.914: round 1 ends in 1 iterations
+20190225032403.914: done the sub_propagating process
+20190225032404.303: new_community_number = 8686
+20190225032404.303: the value of Q after subprocess is 0.853357
+20190225032404.314: num_sub_vertices = 8686
+20190225032405.350: make_sub_edges done
+set |V| to 8686
+|V| =  8686, |E| = 27881
+preprocessing used 0.00 seconds
+20190225032405.357:
+20190225032405.357: begin sub_propagating process 3
+20190225032405.357: begin round 0
+20190225032405.361: sub_active_vertices = 17
+20190225032405.363: sub_active_vertices = 2
+20190225032405.366: sub_active_vertices = 0
+20190225032405.366: round 0 ends in 3 iterations
+20190225032405.366: begin round 1
+20190225032405.369: sub_active_vertices = 0
+20190225032405.369: round 1 ends in 1 iterations
+20190225032405.369: done the sub_propagating process
+20190225032405.761: new_community_number = 8674
+20190225032405.761: the value of Q after subprocess is 0.85336
+20190225032405.771: num_sub_vertices = 8674
+20190225032406.722: make_sub_edges done
+set |V| to 8674
+|V| =  8674, |E| = 27431
+preprocessing used 0.00 seconds
+20190225032406.729:
+20190225032406.729: begin sub_propagating process 4
+20190225032406.729: begin round 0
+20190225032406.733: sub_active_vertices = 1
+20190225032406.734: sub_active_vertices = 0
+20190225032406.734: round 0 ends in 2 iterations
+20190225032406.734: begin round 1
+20190225032406.738: sub_active_vertices = 0
+20190225032406.738: round 1 ends in 1 iterations
+20190225032406.738: done the sub_propagating process
+20190225032407.128: new_community_number = 8674
+20190225032407.128: the value of Q after subprocess is 0.853363
+20190225032407.128:
+20190225032407.128: all propagating process done!
+20190225032407.128: Q = 0.85336
+20190225032407.128: community number is 8674
+20190225032407.411: all processes done!
+
+--------------------------------------------------------------------------------
+
+
+root@0b88cbf47f6c:~/GeminiLite# ./bin/louvain --input_dir /root/data/lj/ --output_dir /root/result/
+set |V| to 0
+|V| = 4036538 |E| = 69362378
+edges loaded into memory
+preprocessing used 6.66 seconds
+m = 69362376.000000
+20190225032514.986: done the initial process
+20190225032514.986:
+20190225032514.986: begin propagating process...
+20190225032514.986: begin round 0
+20190225032523.770: active_vertices(1) = 3698014
+20190225032527.522: active_vertices(2) = 636907
+20190225032530.309: active_vertices(3) = 98614
+20190225032531.850: active_vertices(4) = 62252
+20190225032532.712: active_vertices(5) = 28737
+20190225032533.249: active_vertices(6) = 16529
+20190225032533.625: active_vertices(7) = 10976
+20190225032533.907: active_vertices(8) = 7632
+20190225032534.124: active_vertices(9) = 5524
+20190225032534.291: active_vertices(10) = 4177
+20190225032534.425: active_vertices(11) = 3562
+20190225032534.535: active_vertices(12) = 3158
+20190225032534.642: active_vertices(13) = 2818
+20190225032534.736: active_vertices(14) = 2296
+20190225032534.819: active_vertices(15) = 1911
+20190225032534.892: active_vertices(16) = 1533
+20190225032534.956: active_vertices(17) = 1248
+20190225032535.011: active_vertices(18) = 1022
+20190225032535.053: active_vertices(19) = 741
+20190225032535.085: active_vertices(20) = 621
+20190225032535.113: active_vertices(21) = 440
+20190225032535.140: active_vertices(22) = 298
+20190225032535.161: active_vertices(23) = 181
+20190225032535.180: active_vertices(24) = 150
+20190225032535.197: active_vertices(25) = 122
+20190225032535.213: active_vertices(26) = 116
+20190225032535.226: active_vertices(27) = 63
+20190225032535.238: active_vertices(28) = 33
+20190225032535.250: active_vertices(29) = 24
+20190225032535.261: active_vertices(30) = 19
+20190225032535.273: active_vertices(31) = 13
+20190225032535.288: active_vertices(32) = 2
+20190225032535.300: active_vertices(33) = 5
+20190225032535.313: active_vertices(34) = 6
+20190225032535.323: active_vertices(35) = 8
+20190225032535.334: active_vertices(36) = 1
+20190225032535.344: active_vertices(37) = 2
+20190225032535.354: active_vertices(38) = 0
+20190225032535.354: round 0 ends in 38 iterations
+20190225032535.355: begin round 1
+20190225032538.573: active_vertices(1) = 3501
+20190225032538.667: active_vertices(2) = 521
+20190225032538.695: active_vertices(3) = 411
+20190225032538.714: active_vertices(4) = 199
+20190225032538.731: active_vertices(5) = 148
+20190225032538.746: active_vertices(6) = 77
+20190225032538.759: active_vertices(7) = 53
+20190225032538.770: active_vertices(8) = 56
+20190225032538.781: active_vertices(9) = 16
+20190225032538.791: active_vertices(10) = 0
+20190225032538.791: round 1 ends in 10 iterations
+20190225032538.791: begin round 2
+20190225032541.998: active_vertices(1) = 77
+20190225032542.013: active_vertices(2) = 9
+20190225032542.024: active_vertices(3) = 7
+20190225032542.034: active_vertices(4) = 2
+20190225032542.045: active_vertices(5) = 2
+20190225032542.055: active_vertices(6) = 6
+20190225032542.067: active_vertices(7) = 8
+20190225032542.077: active_vertices(8) = 1
+20190225032542.087: active_vertices(9) = 1
+20190225032542.097: active_vertices(10) = 1
+20190225032542.108: active_vertices(11) = 1
+20190225032542.118: active_vertices(12) = 0
+20190225032542.118: round 2 ends in 12 iterations
+20190225032542.118: begin round 3
+20190225032545.323: active_vertices(1) = 39
+20190225032545.335: active_vertices(2) = 0
+20190225032545.335: round 3 ends in 2 iterations
+20190225032545.335: begin round 4
+20190225032548.538: active_vertices(1) = 2
+20190225032548.549: active_vertices(2) = 0
+20190225032548.549: round 4 ends in 2 iterations
+20190225032548.549: begin round 5
+20190225032551.754: active_vertices(1) = 2
+20190225032551.764: active_vertices(2) = 0
+20190225032551.764: round 5 ends in 2 iterations
+20190225032551.764: begin round 6
+20190225032554.971: active_vertices(1) = 0
+20190225032554.971: round 6 ends in 1 iterations
+20190225032554.971: done propagating process
+20190225032555.275: number of communities is 164589
+20190225032555.275: the final value of Q_total is 0.825316
+20190225032555.286: num_sub_vertices = 164589
+20190225032556.705: make_sub_edges done
+set |V| to 164589
+|V| =  164589, |E| = 889955
+preprocessing used 0.17 seconds
+20190225032556.888:
+20190225032556.888: begin sub_propagating process 0
+20190225032556.889: begin round 0
+20190225032557.072: sub_active_vertices = 141795
+20190225032557.192: sub_active_vertices = 15136
+20190225032557.323: sub_active_vertices = 1326
+20190225032557.379: sub_active_vertices = 791
+20190225032557.417: sub_active_vertices = 1841
+20190225032557.450: sub_active_vertices = 993
+20190225032557.477: sub_active_vertices = 170
+20190225032557.497: sub_active_vertices = 35
+20190225032557.516: sub_active_vertices = 15
+20190225032557.532: sub_active_vertices = 3
+20190225032557.548: sub_active_vertices = 3
+20190225032557.557: sub_active_vertices = 0
+20190225032557.557: round 0 ends in 12 iterations
+20190225032557.557: begin round 1
+20190225032557.668: sub_active_vertices = 49
+20190225032557.690: sub_active_vertices = 3
+20190225032557.710: sub_active_vertices = 1
+20190225032557.732: sub_active_vertices = 0
+20190225032557.732: round 1 ends in 4 iterations
+20190225032557.732: begin round 2
+20190225032557.842: sub_active_vertices = 0
+20190225032557.842: round 2 ends in 1 iterations
+20190225032557.842: done the sub_propagating process
+20190225032558.339: new_community_number = 21958
+20190225032558.339: the value of Q after subprocess is 0.848763
+20190225032558.348: num_sub_vertices = 21958
+20190225032559.467: make_sub_edges done
+set |V| to 21958
+|V| =  21958, |E| = 193964
+preprocessing used 0.04 seconds
+20190225032559.506:
+20190225032559.506: begin sub_propagating process 1
+20190225032559.506: begin round 0
+20190225032559.537: sub_active_vertices = 12673
+20190225032559.557: sub_active_vertices = 1771
+20190225032559.571: sub_active_vertices = 169
+20190225032559.582: sub_active_vertices = 168
+20190225032559.592: sub_active_vertices = 146
+20190225032559.601: sub_active_vertices = 120
+20190225032559.610: sub_active_vertices = 84
+20190225032559.617: sub_active_vertices = 33
+20190225032559.623: sub_active_vertices = 13
+20190225032559.627: sub_active_vertices = 4
+20190225032559.630: sub_active_vertices = 1
+20190225032559.632: sub_active_vertices = 0
+20190225032559.632: round 0 ends in 12 iterations
+20190225032559.632: begin round 1
+20190225032559.651: sub_active_vertices = 55
+20190225032559.657: sub_active_vertices = 8
+20190225032559.661: sub_active_vertices = 0
+20190225032559.661: round 1 ends in 3 iterations
+20190225032559.661: begin round 2
+20190225032559.681: sub_active_vertices = 0
+20190225032559.681: round 2 ends in 1 iterations
+20190225032559.681: done the sub_propagating process
+20190225032600.138: new_community_number = 9293
+20190225032600.138: the value of Q after subprocess is 0.852644
+20190225032600.149: num_sub_vertices = 9293
+20190225032601.277: make_sub_edges done
+set |V| to 9293
+|V| =  9293, |E| = 41528
+preprocessing used 0.01 seconds
+20190225032601.286:
+20190225032601.286: begin sub_propagating process 2
+20190225032601.286: begin round 0
+20190225032601.292: sub_active_vertices = 627
+20190225032601.297: sub_active_vertices = 64
+20190225032601.300: sub_active_vertices = 7
+20190225032601.303: sub_active_vertices = 7
+20190225032601.305: sub_active_vertices = 0
+20190225032601.305: round 0 ends in 5 iterations
+20190225032601.305: begin round 1
+20190225032601.310: sub_active_vertices = 0
+20190225032601.310: round 1 ends in 1 iterations
+20190225032601.310: done the sub_propagating process
+20190225032601.716: new_community_number = 8689
+20190225032601.716: the value of Q after subprocess is 0.853266
+20190225032601.726: num_sub_vertices = 8689
+20190225032602.843: make_sub_edges done
+set |V| to 8689
+|V| =  8689, |E| = 27890
+preprocessing used 0.00 seconds
+20190225032602.850:
+20190225032602.850: begin sub_propagating process 3
+20190225032602.850: begin round 0
+20190225032602.854: sub_active_vertices = 19
+20190225032602.856: sub_active_vertices = 0
+20190225032602.856: round 0 ends in 2 iterations
+20190225032602.856: begin round 1
+20190225032602.859: sub_active_vertices = 0
+20190225032602.859: round 1 ends in 1 iterations
+20190225032602.859: done the sub_propagating process
+20190225032603.285: new_community_number = 8675
+20190225032603.285: the value of Q after subprocess is 0.85327
+20190225032603.295: num_sub_vertices = 8675
+20190225032604.318: make_sub_edges done
+set |V| to 8675
+|V| =  8675, |E| = 27443
+preprocessing used 0.00 seconds
+20190225032604.325:
+20190225032604.325: begin sub_propagating process 4
+20190225032604.325: begin round 0
+20190225032604.329: sub_active_vertices = 1
+20190225032604.331: sub_active_vertices = 0
+20190225032604.331: round 0 ends in 2 iterations
+20190225032604.331: begin round 1
+20190225032604.334: sub_active_vertices = 0
+20190225032604.335: round 1 ends in 1 iterations
+20190225032604.335: done the sub_propagating process
+20190225032604.772: new_community_number = 8675
+20190225032604.772: the value of Q after subprocess is 0.853268
+20190225032604.772:
+20190225032604.772: all propagating process done!
+20190225032604.772: Q = 0.85327
+20190225032604.772: community number is 8675
+20190225032605.067: all processes done!
