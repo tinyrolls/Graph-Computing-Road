@@ -1,51 +1,58 @@
-# 测试记录
+## 算法论文
 
-## 服务器信息
+### Louvain算法
 
-### 硬件
+    <!-- 分布式版本 -->
 
-| CPU                                          | Memory | 磁盘       |
-| -------------------------------------------- | ------ | -------- |
-| 8  Intel(R) Xeon(R) CPU E5-2623 v3 @ 3.00GHz | 128G   | 380G SSD |
+1.  A Scalable Distributed Louvain Algorithm for Large-scale Graph Community Detection
+    <!-- 并行多线程版本 -->
+2.  Parallel heuristics for scalable community detection
+    <!-- 单线程串行版本 -->
+3.  Fast unfolding of communities in large networks
+    <!-- 模块度的提出 -->
+4.  Finding and evaluating community structure in networks
+    <!-- 社区发现领域的提出 -->
+5.  Community detection in graphs
 
-### 软件
+## 算法过程笔记
 
-1.  Docker version 17.06.0-ce
-2.  DockerHub Ubuntu:16.04
-3.  spark-distributed-louvain-modularity <https://github.com/Sotera/spark-distributed-louvain-modularity> 2019/2/22
-4.  GeminiLite 2019/2/22
+1.  载图
+2.  初始化
+3.  初始化两个Bitmap, old_active, new_active
+4.  初始化点总权重k（所有与之相连的边的权重和）, 社区总权重e_tot（所有与社区相连的边的总权重，即邻边权重和）
+5.  初始化模块度增益Q, 总边权重m（全图所有边权重和）
+6.  初始化社区label, 各点自己为一个社区
+    5.  遍历一遍所有点，记下k, e_tot, 计算开始之前点权重即为社区权重，m里所有的边被算了两遍，除二修正。
+7.  第一遍大图开始计算
+8.  遍历所有点，循环20轮（一般10轮以内就收敛了）
+    1.  排除孤立点，设定为自成一个社区
+    2.  取当前点的出边，往map里存社区号，边权重和>，这步就是更新count(e_tot)
+    3.  计算当前点放入邻接社区的相对增益，留下最大增益社区标签
+    4.  更新e_tot, active_vertices
+    5.  更新old_active, new_active
+    6.  循环20轮propagation
+9.  打印LOG
+10. 子图进行迭代计算，迭代最大100轮，当没有点更新社区的时候，就跳出循环
+11. 根据第一轮的情况构建子图
+12. 重复第3步的计算过程
+13. 结束运算，输出结果
 
-## 数据来源
+## 并行算法
 
-1.  Enron Dataset <http://snap.stanford.edu/data/email-Enron.html>
-2.  Amazon Dataset <http://snap.stanford.edu/data/amazon0601.html>
-3.  Youtube Dataset <http://snap.stanford.edu/data/com-Youtube.html>
-4.  LiveJournal Dataset <http://snap.stanford.edu/data/com-LiveJournal.html>
+1.  载图
+2.  分图
+    1.  筛选出高度数的点，全节点复制，称之为delegates
+    2.  低度数的点按照1D进行分图
+3.  并行计算
+    1.  节点内进行增益Q计算
+    2.  全局同步delegates的最大增益，确定delegates的社区归属
+    3.  节点间交换边界点的社区归属
+    4.  更新节点内的节点社区归属
+    5.  生成新的图，继续循环，直到没有节点更新
+4.  最后的小图直接计算
 
-## 数据规模
-
-| 名称                      | vertex数目  | edge数目    | 文件大小   |
-| ----------------------- | --------- | --------- | ------ |
-| email-enron.txt         | 36,691    | 367,661   | 4MB    |
-| com-youtube.ungraph.txt | 1,157,806 | 2,987,624 | 38.7MB |
-| amazon0601.txt          | 403,393   | 3,387,388 | 47.9MB |
-| com-lj.ungraph.txt      | 3997961   | 34681189  | 479MB  |
-
-## 测试结果 (Time(s) / Modularity)
-
-| 名称                    | enron(3W)     | amazon(40W)   | youtube(115W) | lj.ungraph(400W) |
-| --------------------- | ------------- | ------------- | ------------- | ---------------- |
-| GeminiLite-louvain(1) | 0.591 / 0.677 | 3.132 / 0.913 | 6.190 / 0.841 | 93 / 0.853       |
-| GeminiLite-louvain(2) | 0.573 / 0.677 | 3.086 / 0.912 | 6.332 / 0.841 | 89 / 0.853       |
-| GeminiLite-louvain(3) | 0.609 / 0.677 | 3.199 / 0.912 | 6.319 / 0.841 | 90 / 0.853       |
-| dga-graphx(1)         | 95 / 0.544    | 593 / 0.870   | 3671 / 0.686  | ----             |
-| dga-graphx(2)         | 100 / 0.544   | 592 / 0.870   | 3803 / 0.686  | ----             |
-| dga-graphx(3)         | 98  / 0.544   | 584 / 0.870   | 3771 / 0.686  | ----             |
-
-## 横向对比测试结果 (Time(s) / Modularity)
-
-| LPA横向对比           | enron(3W)    | amazon(40W)  | youtube(115W) | lj.ungraph(400W) |
-| ----------------- | ------------ | ------------ | ------------- | ---------------- |
-| GeminiLite-lpa(1) | 0.08 / 0.810 | 0.95 / 0.734 | 1.01 / 0.910  | 8.14 / 0.954     |
-| GeminiLite-lpa(2) | 0.09 / 0.804 | 0.93 / 0.731 | 1.04 / 0.886  | 8.33 / 0.957     |
-| GeminiLite-lpa(3) | 0.08 / 0.806 | 0.92 / 0.733 | 1.01 / 0.892  | 8.25 / 0.962     |
+    1.  直接分图
+    2.  节点内计算
+    3.  节点间更新邻接点
+    4.  继续循环，直到没有节点更新
+    5.  生成新图，继续循环，直到没有Q值增大

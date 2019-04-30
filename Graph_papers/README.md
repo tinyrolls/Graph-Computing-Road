@@ -8,17 +8,16 @@ Processing large-scale graph data: A guide to current technology
 
 <https://www.ibm.com/developerworks/library/os-giraph/>
 
-## Papers
+## Core Papers
 
 1.  BSP
     A Bridging Model for Parallel Computation.
 
-2.  Challenges in Parallel Graph Processing.
 
-3.  Pregel
+2.  Pregel
     Pregel - a system for large-scale graph processing.
 
-4.  GraphLab
+3.  GraphLab
     GraphLab - A New Framework For Parallel Machine Learning.
 
-5.  GraphChi
+4.  GraphChi
