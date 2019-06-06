@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include <queue>
+
 #include "core/graph.hpp"
 #include "fma-common/string_formatter.h"
 #include "fma-common/check_date.h"
@@ -49,9 +51,14 @@ size_t parse_label(const char * p, const char * end, VertexUnit<VertexId> & v) {
   return p - orig;
 }
 
+bool compare(VertexId a, VertexId b) {
+  return a > b;
+}
+
 int main(int argc, char ** argv) {
 
   VertexId vertices = 0;
+  VertexId communities = 0;
   std::string input_dir = argv[1];
   std::string label_dir = argv[2];
 
@@ -60,9 +67,6 @@ int main(int argc, char ** argv) {
 
   Bitmap * full_active = graph.alloc_vertex_bitmap();
   full_active->fill();
-
-  Bitmap * record_comm = graph.alloc_vertex_bitmap();
-  record_comm->clear();
 
   Weight * k = graph.alloc_vertex_array<Weight>();
   graph.fill_vertex_array(k, (Weight)0.0);
@@ -79,26 +83,18 @@ int main(int argc, char ** argv) {
       for (auto & e : graph.out_edges(v)) {
         k[v] += e.edge_data;
       }
-      e_tot[v] = k[v];
       return k[v];
     },
     full_active
   ) / 2;
-  LOG() << "m = " << m;
-  LOG() << "";
 
-  VertexId communities = graph.stream_vertices<VertexId>(
+  graph.stream_vertices<VertexId>(
     [&] (VertexId v) {
-      if (record_comm->get_bit(v) == 0) {
-        return 0;
-      } else {
-        return 1;
-      }
+      write_add(&e_tot[Comm[v]], k[v]);
+      return 0;
     },
     full_active
   );
-  LOG() << "Communities = " << communities;
-  LOG() << "";
 
   Weight Q = graph.stream_vertices<Weight>(
     [&] (VertexId v) {
@@ -106,13 +102,38 @@ int main(int argc, char ** argv) {
       for (auto e : graph.out_edges(v)) {
         VertexId nbr = e.neighbour;
         if (Comm[v] == Comm[nbr]) {
-          q += (e.edge_data - 1.0 * k[v] * k[nbr] / (2 * m));
+          q += e.edge_data;
         }
       }
+      q -= 1.0 * k[v] * e_tot[Comm[v]] / (2 * m);
       return q;
     },
     full_active
   ) / (2 * m);
-  LOG() << "Q = " << Q;
-  LOG() << "";
+
+  VertexId * Count = graph.alloc_vertex_array<VertexId>();
+  graph.fill_vertex_array(Count, (VertexId)0);
+  VertexId num_vertices = graph.get_num_vertices();
+  for (VertexId v = 0; v < num_vertices; v++) {
+    if (Comm[v] == num_vertices) continue;
+    Count[Comm[v]]++;
+  }
+
+  std::priority_queue<VertexId> q;
+  for (VertexId v = 0; v < num_vertices; v++) {
+    q.push(Count[v]);
+    if (Count[v] > 0) communities++;
+  }
+
+  printf("m = %lf\n", m);
+  printf("Communities = %lu\n", communities);
+  printf("Q = %lf\n", Q);
+  printf("Top 10 largest communities size and percentage\n");
+  for (int i = 0; i < 10; i++) {
+    VertexId size = q.top();
+    q.pop();
+    double rate = 100.0 * size / num_vertices;
+    printf("%lu\t%lf\n", size, rate);
+  }
+
 }
