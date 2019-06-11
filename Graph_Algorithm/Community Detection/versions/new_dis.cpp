@@ -17,11 +17,10 @@
 
 typedef double Weight;
 
-// inline void LOG(ostream fout) {
-//   if (partition_id == 1) {
-//       FMA_LOG() << fout;
-//   }
-// }
+struct Delegetes_Info {
+  Weight delta_Q;
+  VertexId dis_Comm;
+}
 
 size_t parse_edge(const char *p, const char * end, EdgeUnit<Weight> & e) {
   const char * orig = p;
@@ -60,6 +59,271 @@ size_t parse_label(const char * p, const char * end, VertexUnit<VertexId> & v) {
   return p - orig;
 }
 
+void new_op(Delegetes_Info* in, Delegetes_Info* inout, int* len, MPI_Datatype* dptr) {
+
+  int i = 0, j = 0, k = 0;
+
+  Delegetes_Info result = new Delegetes_Info[len];
+
+  for (i = 0; i < *len; i++) {
+    if (in[j].delta_Q < inout[k].delta_Q) {
+      result[i].delta_Q = in[j].delta_Q;
+      result[i].dis_Comm = in[j].dis_Comm;
+      j++;
+    } else {
+      result[i].delta_Q = inout[k].delta_Q;
+      result[i].dis_Comm = inout[k].dis_Comm;
+      k++;
+    }
+  }
+
+  for (i = 0;, i < *len; i++) {
+    inout[i].delta_Q = result[i].delta_Q;
+    inout[i].dis_Comm = result[i].dis_Comm;
+  }
+
+  delete[] result;
+}
+
+void new_type(MPI_Datatype* delegates_type) {
+  int blockcounts[2];
+  MPI_Datatype oldtypes[2];
+  MPI_Aint offset[2];
+
+  blockcounts[0] = 1;
+  blockcounts[1] = 1;
+
+  offsets[0] = 0;
+  offset[1] = sizeof(VertexId);
+
+  oldtypes[0] = MPI_UNSIGNED_LONG;
+  oldtypes[1] = MPI_DOUBLE;
+
+  MPI_Type_struct(2, blockcounts, offsets, oldtypes, delegates_type);
+  MPI_Type_commit(delegates_type);
+}
+
+
+class LouvainGraph {
+  int partitions;
+  int partition_id;
+  Graph<Weight> * graph;
+  VertexId * Comm;
+  Bitmap * full_active;
+  Bitmap * part_active;
+  Bitmap * delegates_active;
+
+  double * k;
+  double * e_tot;
+  VertexId num_vertices;
+  VertexId part_num_vertices;
+  VertexId num_community;
+
+  VertexId degree_threshold;
+  VertexId num_delegates;
+
+  int num_array[partitions] = {0};
+  int offset_array[partitions] = {0};
+  Weight Q;
+
+public:
+
+  LouvainGraph(Graph<double> * orig_Graph, Weight orig_threshold = 0.0001) {
+    graph = orig_Graph;
+    if (threshold <= 0) {
+      threshold = 0.0001;
+    } else {
+      threshold = orig_threshold;
+    }
+  }
+
+  void partition(int orig_partitions, int orig_partition_id) {
+    partitions = orig_partitions;
+    partition_id = orig_partition_id;
+  }
+
+  void init() {
+    if (!graph) {
+      exit(0);
+    }
+    Comm = graph->alloc_vertex_array<VertexId>();
+    full_active = graph->alloc_vertex_bitmap();
+    part_active = graph->alloc_vertex_bitmap();
+    delegates_active = graph->alloc_vertex_bitmap();
+    k = graph->alloc_vertex_array<Weight>();
+    e_tot = graph->alloc_vertex_array<Weight>();
+
+
+    num_vertices = graph->get_num_vertices();
+    int num_start = 0;
+    int num_end = num_vertices;
+    if (partition_id == partitions - 1) {
+      part_num_vertices = num_vertices / partitions + num_vertices % partitions;
+      num_start = num_vertices - part_num_vertices;
+      num_end = num_vertices;
+    } else {
+      part_num_vertices = num_vertices / partitions;
+      num_start = partition_id * part_num_vertices;
+      num_end = num_start + part_num_vertices - 1;
+    }
+
+    VertexId
+    if (partition_id == 0) {
+
+    }
+
+    graph->stream_vertices<VertexId>(
+      [&] (VertexId v) {
+        if (graph->out_degree[v] > degree_threshold) {
+          delegates_active->set_bit(v);
+          part_active->set_bit(v);
+          write_add(&num_delegates, 1);
+        } else if ((int)v >= num_start && (int)v <= num_end) {
+          part_active->set_bit(v);
+        }
+      },
+      full_active
+    )
+
+    m = graph.stream_vertices<Weight>(
+      [&] (VertexId v) {
+        Comm[v] = v;
+        Update_Comm[v] = v;
+        for (auto & e : graph.out_edges(v)) {
+          k[v] += e.edge_data;
+        }
+        e_tot[v] = k[v];
+        return k[v];
+      },
+      full_active
+    ) / 2;
+    printf("m = %f\n", m);
+
+    LOG() << "done the inital process";
+
+  }
+
+  void first_step() {
+    int iters = 0;
+    VertexId active_vertices = num_vertices;
+    while(active_delegates) {
+      iters++;
+//parallel local clustering with delegates
+      std::unordered_map<VertexId, std::pair<Weight, VertexId>> delegates;
+      active_vertices = graph.stream_vertices<VertexId> (
+        [&] (VertexId v) {
+          if (graph.out_degree[v] == 0 || part_active->get_bit(v) == 0) {
+            return 0;
+          } else {
+            std::unordered_map<VertexId, Weight> count;
+            for (auto e : graph.out_edges(v)) {
+              if (v == e.neighbour) continue;
+              VertexId nbr_comm = Comm[e.neighbour];
+              auto it = count.find(nbr_comm);
+              if (it == count.end()) {
+                count[nbr_comm] = e.edge_data;
+              } else {
+                it -> second += e.edge_data;
+              }
+            }
+            VertexId old_comm = Comm[v];
+            Weight k_in_out = 0.0;
+            if (count.find(old_comm) != count.end()) {
+              k_in_out = count[old_comm];
+            }
+            Weight delta_in = k[v] * (e_tot[old_comm] - k[v]) - 2 * k_in_out * m;
+            Weight delta_in_max = -delta_in;
+            VertexId comm_min = old_comm;
+
+            for (auto & ele : count) {
+              VertexId new_comm = ele.first;
+              Weight k_in_in = ele.second;
+              Weight delta_in = 2 * k_in_in * m - k[v]*(e_tot[new_comm]);
+              if (delta_in > delta_in_max) {
+                  delta_in_max = delta_in;
+                  comm_min = new_comm;
+              } else if (delta_in == delta_in_max) {
+                if (new_comm < comm_min) {
+                  comm_min = new_comm;
+                }
+              }
+            }
+
+            if (comm_min != old_comm) {
+              if (iters == 1 && comm_min < old_comm) {
+
+                auto it = delegates.find(v);
+                if (it == delegates.end()) {
+                  delegates[v].first = delta_in_max;
+                  delegates[v].second = comm_min;
+                } else {
+                  it -> second.first = delta_in_max;
+                  it -> second.second = comm_min;
+                }
+
+                write_sub(&e_tot[old_comm], k[v]);
+                write_add(&e_tot[comm_min], k[v]);
+                Comm[v] = comm_min;
+                return 1;
+              } else if (iters != 1) {
+
+                auto it = delegates.find(v);
+                if (it == delegates.end()) {
+                  delegates[v].first = delta_in_max;
+                  delegates[v].second = comm_min;
+                } else {
+                  it -> second.first = delta_in_max;
+                  it -> second.second = comm_min;
+                }
+
+
+                write_sub(&e_tot[old_comm], k[v]);
+                write_add(&e_tot[comm_min], k[v]);
+                Comm[v] = comm_min;
+                return 1;
+              }
+            }
+          }
+          return 0;
+        },
+        part_active
+      );
+      LOG() << "active_vertices(" << iters << ") = " << active_vertices;
+
+//Broadcast delegates achieving the highest modularity gain
+      MPI_Op myop;
+      MPI_Datatype delegates_type;
+
+      MPT_Op_create((MPI_User_function*)new_op, 1, &myop);
+      new_type(&delegates_type);
+
+      MPI_Allreduce(delegates, Update_delegates, num_delegates, delegates_type, myop, MPI_COMM_WORLD);
+
+      MPI_Op_free(&myop);
+
+      graph.stream_vertices<VertexId>(
+        [&] (VertexId v) {
+          Comm[v] = m
+        }
+      )
+    }
+
+//Broadcast delegates achieving the highest modularity gain
+    VertexId * delegates = new VertexId[num_delegates];
+    VertexId * Update_delegates = new VertexId[num_delegates];
+    VertexId i = 0;
+    for (VertexId v = 0; v < num_vertices; v++) {
+      if (delegates_active->get_bit(v)) {
+        delegates[i] = Comm[v];
+        i++;
+      }
+    }
+
+    MPI_Allreduce(delegates, Update_delegates, num_delegates, MPI_UNSIGNED_LONG, MPI_)
+
+  }
+}
+
 int main(int argc, char ** argv) {
 
   int partitions;
@@ -73,30 +337,22 @@ int main(int argc, char ** argv) {
   VertexId vertices = 0;
   double threshold = 0.0001;
   std::string output_dir = "";
-  std::string label_dir = "";
   std::string license_file = "";
 
   fma_common::Configuration config;
   toolkits_common::config_common(config, license_file, input_format, input_dir, vertices, true, output_dir);
   config.Add(threshold, "threshold", true)
     .Comment("Double type to control the calculation accuracy. ");
-  config.Add(label_dir, "label_dir", true)
-    .Comment("Directory where the initial-label files are stored."
-             " Only initial-label files can be stored under the directory");
   config.Parse(argc, argv);
   config.ExitAfterHelp();
   config.Finalize();
 
-  Graph<Weight> graph;
+  Graph<Weight> * graph;
+  graph = new Graph<Weight>();
   if (input_format == 0) {
-    graph.load(input_dir, vertices, true);
+    graph->load(input_dir, vertices, true);
   } else {
-    graph.load_txt_undirected(input_dir, vertices, parse_edge, filter_edge);
-  }
-
-  double exec_time[2] = {0};
-  for(int i = 0; i < 2; i++) {
-    exec_time[i] -= get_time();
+    graph->load_txt_undirected(input_dir, vertices, parse_edge, filter_edge);
   }
 
   VertexId num_vertices = graph.get_num_vertices();
@@ -113,6 +369,32 @@ int main(int argc, char ** argv) {
     offset_array[i] = i * part_num_vertices;
     assert(offset_array[i] + num_array[i] <= (int)num_vertices);
   }
+
+  double exec_time[2] = {0};
+  for(int i = 0; i < 2; i++) {
+    exec_time[i] -= get_time();
+  }
+  LOG() << "";
+
+  LouvainGraph * louvain_graph = new LouvainGraph(graph, threshold);
+  louvain_graph->partition(partitions, partition_id);
+  louvain_graph->init();
+  // louvain_graph->delegata_partitioning();
+  louvain_graph->first_step();
+  exec_time[0] += get_time();
+  printf("First_step exec_time = %.2lf seconds\n", exec_time[0]);
+
+  louvain_graph->second_step();
+  exec_time[1] += get_time();
+  printf("Second_step exec_time = %.2lf seconds\n", exec_time[1]);
+
+
+  louvain_graph->output(output_dir);
+
+  LOG() << "all process done !";
+
+  return 0;
+}
 
   Weight * k = graph.alloc_vertex_array<Weight>();
   Weight * e_tot = graph.alloc_vertex_array<Weight>();

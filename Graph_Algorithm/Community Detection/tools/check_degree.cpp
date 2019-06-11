@@ -29,30 +29,25 @@ int main(int argc, char ** argv) {
   VertexId * Count = graph.alloc_vertex_array<VertexId>();
   graph.fill_vertex_array(Count, 0);
 
+  VertexId max_degree = 0;
+
   VertexId gather_degree = graph.stream_vertices<VertexId>(
     [&] (VertexId v) {
       VertexId out = graph.out_degree[v];
       write_add(&Count[out], 1);
+      write_max(&max_degree, out);
       return out;
     },
     full_active
   );
   double avg_degree = gather_degree * 1.0 / graph.get_num_vertices();
 
-  
-
-
-
+  ofstream count_txt("./count.txt", ios::out);
+  for(int i = 0; i <= out; i++) {
+    count_txt << i << "\t" << Count[i] << "\n";
+  }
 
   printf("avg_degree = %lf\n", avg_degree);
-  printf("  = %lu\n", communities);
-  printf("Q = %lf\n", Q);
-  printf("Top 10 largest communities size and percentage\n");
-  for (int i = 0; i < 10; i++) {
-    VertexId size = q.top();
-    q.pop();
-    double rate = 100.0 * size / num_vertices;
-    printf("%lu\t%lf\n", size, rate);
-  }
+  printf("max_degree = %lf\n", max_degree);
 
 }
