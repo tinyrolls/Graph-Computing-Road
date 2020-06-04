@@ -1,5 +1,10 @@
-## 图计算算法研究
+## Graph_Algorithm Researches
 
-1. 社区发现(Community Detection)
+1. Community Detection - 社区发现
+    code version:
+    [serial](./version/serial.cpp)
+    [async](./version/async.cpp)
+    [distributed](./version/distributed.cpp)
 
-2. 子图同构(Subgraph isomorphism)
+2. Subgraph isomorphism - 子图同构
+    code version:

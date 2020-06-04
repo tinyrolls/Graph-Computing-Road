@@ -13,6 +13,22 @@ To record what I learn and what I write.
 + **Community Detection** - Find Community in Large Graph.
 + **Subgraph isomorphism** - Find Subgraph isomorphism in Large Graph.
 
+#### Community Detection
+
+##### Several Code (Written by myself)
+
+- [Serial version](Graph_Algorithm/Community_Detection/versions/serial.cpp)    
+Read Louvain Paper, and wrote it on Gemini Framework  
+
+- [Sync version](Graph_Algorithm/Community_Detection/versions/new_sync.cpp)  
+Divided into different segmentations and steps. Shared memory and multi-cores, parallel and sync-update ( wait for all threads finish local computation and update together).  
+
+- [Async version](Graph_Algorithm/Community_Detection/versions/async.cpp)    
+Divided into different segmentations and steps, gain new data and re-compute Immediately
+
+- [Distributed version](Graph_Algorithm/Community_Detection/versions/distributed.cpp)    
+Distributed memory, communication consumption takes lots of time. When local computation takes a big part, so that distributed computation gains bigger than communication consumption.
+
 
 ## Based Knowledge
 ### Core Papers
